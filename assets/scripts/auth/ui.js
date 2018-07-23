@@ -9,7 +9,7 @@ const signUpSuccess = function (data) {
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
   $('#sign-up')[0].reset()
-  // console.log('signUpSuccess ran. Data is :', data)
+  console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = function (error) {
@@ -26,7 +26,7 @@ const signInSuccess = function (data) {
   $('#sign-in').addClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
-  // console.log('signInSuccess ran. Data is :', data)
+  console.log('signInSuccess ran. Data is :', data)
 }
 
 const signInFailure = function (error) {
@@ -64,7 +64,8 @@ const changePasswordFailure = function (error) {
   $('#message').css('background-color', 'red')
   console.error('changePasswordFailure ran. Error is :', error)
 }
-/ ~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
 
