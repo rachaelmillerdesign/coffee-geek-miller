@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,81 +12,86 @@
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
+
 <body>
-  <button class="accordion">SIGN IN / SIGN UP</button>
-      <div class="panel">
-      <form id="sign-up" class="border">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign up!">
-        </fieldset>
-      </form>
+  <div>
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <input type="submit" value="Sign up!">
+      </fieldset>
+    </form>
 
-      <form id="sign-in" class="border">
-        <fieldset>
-          <legend>Sign in!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" value="Sign in!">
-        </fieldset>
-      </form>
+    <form id="sign-in">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </fieldset>
+    </form>
 
-      <form id="sign-out" class="hidden border">
-        <fieldset>
-          <legend>Sign Out!</legend>
-          <input type="submit" value="Sign out!">
-        </fieldset>
-      </form>
+    <form id="sign-out" class="hidden">
+      <fieldset>
+        <legend>Sign Out!</legend>
+        <input type="submit" value="Sign out!">
+      </fieldset>
+    </form>
 
-      <form id="change-password" class="hidden border">
-        <fieldset>
-          <legend>Change Password!</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-      </form>
+    <form id="change-password" class="hidden">
+      <fieldset>
+        <legend>Change Password!</legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input type="submit" value="Change Password!">
+      </fieldset>
+    </form>
+  </div>
+<button class="accordion">
+  <h3>COFFEE</h3>
+  </button>
+  <div class="panel">
+    <label for="ROASTER">ROASTER</label>
+    <input type='text'>
+    <label for="BLEND">BLEND</label>
+    <input type='text'>
+    <div>
+      <label for="fave">FAVORITE</label>
+      <input type="checkbox">
+    </div>
+    <div class="rating">
+      <label>RATING</label>
+      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+  </div>
+  <div>
+    <button class="accordion">
+      <h3>TASTING NOTES</h3>
+    <button class="accordion">
+    <div class="panel">
+      <input type='text' id='notes' cols="20" name="usrtxt" wrap="hard">
+    </div>
+  </div>
+<button class="accordion">
+  <h3>TECH SPECS</h3>
+</button>
+  <div class="panel">
+    <label for="grams in">grams in</label>
+    <input type='text'>
+    <label for="grams out">grams out</label>
+    <input type='text'>
+    <label for="time">time</label>
+    <input type='text'>
+    <label for="temperature">temperature</label>
+    <input type='text'>
+    <label for="extraction notes">extraction notes</label>
+    <input type='text'>
+  </div>
 
-      </div>
-<h3>TASTINGS</h3>
-
-    <button class="accordion">COFFEE</button>
-      <div class="panel">
-        <label for="ROASTER">ROASTER</label>
-        <input type='text'>
-        <label for="BLEND">BLEND</label>
-        <input type='text'>
-        <div>
-        <label for="fave">FAVORITE</label>
-        <input type="checkbox">
-        </div>
-        <div class="rating">
-        <label>RATING</label>
-          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-      </div>
-
-    <button class="accordion">TASTING NOTES</button>
-      <div class="panel">
-        <input type='text' id='notes' cols="20" name="usrtxt" wrap="hard">
-      </div>
-
-    <button class='accordion'>TECH SPECS</button>
-      <div class="panel">
-        <label for="grams in">grams in</label>
-        <input type='text'>
-        <label for="grams out">grams out</label>
-        <input type='text'>
-        <label for="time">time</label>
-        <input type='text'>
-        <label for="temperature">temperature</label>
-        <input type='text'>
-        <label for="extraction notes">extraction notes</label>
-        <input type='text'>
-      </div>
-  <button class='submit'><h4>SUBMIT</h4></button>
+  <button class='submit'>SUBMIT</button>
 </body>
+
 </html>
