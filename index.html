@@ -14,7 +14,10 @@
 </head>
 
 <body>
-  <div>
+  <button class="accordion">
+<h3>SIGN IN / SIGN UP</h3>
+</button>
+  <div class="panel">
     <form id="sign-up">
       <fieldset>
         <legend>Sign up!</legend>
@@ -50,45 +53,42 @@
       </fieldset>
     </form>
   </div>
-<button class="accordion">
+  </button>
+  <button class="accordion">
   <h3>COFFEE</h3>
   </button>
-  <div class="panel">
-    <label for="ROASTER">ROASTER</label>
-    <input type='text'>
-    <label for="BLEND">BLEND</label>
-    <input type='text'>
+  <form class="panel">
+    <label for="roaster">ROASTER</label>
+    <input type='text' id='roaster'>
+    <label for="blend">BLEND</label>
+    <input type='text' id='blend'>
     <div>
       <label for="fave">FAVORITE</label>
-      <input type="checkbox">
+      <input type="checkbox" id='fave'>
     </div>
     <div class="rating">
       <label>RATING</label>
       <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
     </div>
-  </div>
-  <div>
-    <button class="accordion">
-      <h3>TASTING NOTES</h3>
-    <button class="accordion">
+  </form>
+    <button class="accordion"><h3>TASTING NOTES</h3></button>
     <div class="panel">
       <input type='text' id='notes' cols="20" name="usrtxt" wrap="hard">
     </div>
-  </div>
-<button class="accordion">
+  <button class="accordion">
   <h3>TECH SPECS</h3>
 </button>
   <div class="panel">
-    <label for="grams in">grams in</label>
-    <input type='text'>
-    <label for="grams out">grams out</label>
-    <input type='text'>
+    <label for="grams_in">grams in</label>
+    <input type='text' id='grams_in'>
+    <label for="grams_out">grams out</label>
+    <input type='text' id='grams_out'>
     <label for="time">time</label>
-    <input type='text'>
+    <input type='text' id='time'>
     <label for="temperature">temperature</label>
-    <input type='text'>
-    <label for="extraction notes">extraction notes</label>
-    <input type='text'>
+    <input type='text' id='temperature'>
+    <label for="extraction_notes">extraction notes</label>
+    <input type='text' id='extraction_notes'>
   </div>
 
   <button class='submit'>SUBMIT</button>

@@ -47,13 +47,9 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~`
+// ~~~~~~~~~~~~~~~~~~~~~~
 // HANDLERS
-// ~~~~~~~~~~~~~~~~~~~~~~`
-//
-// const callback = function (e){
-//
-// }
+// ~~~~~~~~~~~~~~~~~~~~~~
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)

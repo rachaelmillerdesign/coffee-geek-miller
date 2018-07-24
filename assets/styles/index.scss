@@ -15,9 +15,10 @@ body {
 }
 
 h3 {
-  color: #382f25;
+  // color: #382f25;
   text-align: left;
   float: left;
+  font-weight: 400;
 }
 
 .rating {
@@ -86,13 +87,13 @@ input[type="checkbox"] {
 }
 
 .active, .accordion:hover {
-    background-color: #78572e;
     color: white;
+    background-color: #78572e;
 }
-//
-// .panel {
-//     padding: 0 18px;
-//     // display: none;
-//     background-color: #fff9f2;
-//     overflow: hidden;
-// }
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #fff9f2;
+    overflow: hidden;
+}
