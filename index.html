@@ -14,9 +14,7 @@
 </head>
 
 <body>
-  <button class="accordion">
-<h3>SIGN IN / SIGN UP</h3>
-</button>
+  <button class="accordion">SIGN IN / SIGN UP</button>
   <div class="panel">
     <form id="sign-up">
       <fieldset>
@@ -53,45 +51,38 @@
       </fieldset>
     </form>
   </div>
-  </button>
-  <button class="accordion">
-  <h3>COFFEE</h3>
-  </button>
-  <form class="panel">
-    <label for="roaster">ROASTER</label>
-    <input type='text' id='roaster'>
-    <label for="blend">BLEND</label>
-    <input type='text' id='blend'>
-    <div>
+  <button class="accordion">COFFEE</button>
+  <form id="coffee" class="panel">
+    <fieldset>
+      <label for="roaster">ROASTER</label>
+      <input type="text" id="roaster" name="coffee[roaster]">
+      <label for="blend">BLEND</label>
+      <input type="text" id="blend" name="coffee[blend]">
       <label for="fave">FAVORITE</label>
-      <input type="checkbox" id='fave'>
-    </div>
-    <div class="rating">
+      <input type="checkbox" id="fave" name="coffee[favorite]">
       <label>RATING</label>
       <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-    </div>
+      <label for="tasting_notes">TASTING NOTES</label>
+      <input type="text" id="notes" name="tasting[tasting_notes]">
+      <button class="submit" value="tasting">SAVE</button>
+    </fieldset>
   </form>
-    <button class="accordion"><h3>TASTING NOTES</h3></button>
-    <div class="panel">
-      <input type='text' id='notes' cols="20" name="usrtxt" wrap="hard">
-    </div>
-  <button class="accordion">
-  <h3>TECH SPECS</h3>
-</button>
-  <div class="panel">
-    <label for="grams_in">grams in</label>
-    <input type='text' id='grams_in'>
-    <label for="grams_out">grams out</label>
-    <input type='text' id='grams_out'>
-    <label for="time">time</label>
-    <input type='text' id='time'>
-    <label for="temperature">temperature</label>
-    <input type='text' id='temperature'>
-    <label for="extraction_notes">extraction notes</label>
-    <input type='text' id='extraction_notes'>
-  </div>
-
-  <button class='submit'>SUBMIT</button>
+  <button class="accordion">TECH SPECS</button>
+  <form id="tasting" class="panel">
+    <fieldset>
+      <label for="grams_in">grams in</label>
+      <input type="text" id="grams_in" name="tasting[grams_in]">
+      <label for="grams_out">grams out</label>
+      <input type="text" id="grams_out" name="tasting[grams_out]">
+      <label for="time">time</label>
+      <input type="text" id="time" name="tasting[time]">
+      <label for="temperature">temperature</label>
+      <input type="text" id="temperature" name="tasting[temperature]">
+      <label for="extraction_notes">extraction notes</label>
+      <input type="text" id="extraction_notes" name="tasting[extraction_notes]">
+      <button class="submit">SAVE</button>
+    </fieldset>
+  </form>
 </body>
 
 </html>

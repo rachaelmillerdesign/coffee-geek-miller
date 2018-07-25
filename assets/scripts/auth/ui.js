@@ -8,7 +8,6 @@ const signUpSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
-  $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -27,6 +26,7 @@ const signInSuccess = function (data) {
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
+  store.user = data.user
 }
 
 const signInFailure = function (error) {
@@ -42,7 +42,6 @@ const signOutSuccess = function () {
   $('#sign-up').removeClass('hidden')
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
-  $('#sign-up')[0].reset()
   // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
@@ -78,7 +77,28 @@ for (i = 0; i < acc.length; i++) {
     }
   })
 }
+const addCoffeeSuccess = function () {
+  $('#message').text('added coffee successfully')
+  $('#message').css('background-color', 'green')
+  console.log('addCoffeeSuccess ran and nothing was returned!')
+}
 
+const addCoffeeFailure = function (error) {
+  $('#message').text('Error on add coffee')
+  $('#message').css('background-color', 'red')
+  console.error('addCoffeeFailure ran. Error is :', error)
+}
+const addTastingSuccess = function () {
+  $('#message').text('added tasting successfully')
+  $('#message').css('background-color', 'green')
+  console.log('addTastingSuccess ran and nothing was returned!')
+}
+
+const addTastingFailure = function (error) {
+  $('#message').text('Error on add tasting')
+  $('#message').css('background-color', 'red')
+  console.error('addTastingFailure ran. Error is :', error)
+}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -92,5 +112,9 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  acc
+  acc,
+  addCoffeeFailure,
+  addCoffeeSuccess,
+  addTastingSuccess,
+  addTastingFailure
 }

@@ -34,13 +34,28 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  // console.log('data is ', data)
+  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
+    data
+  })
+}
+const onTastingSubmit = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/tastings',
+    method: 'POST',
+    data
+  })
+}
+
+const onCoffeeSubmit = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/coffees',
+    method: 'POST',
     data
   })
 }
@@ -52,5 +67,7 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  onTastingSubmit,
+  onCoffeeSubmit
 }

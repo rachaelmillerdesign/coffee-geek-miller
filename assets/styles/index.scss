@@ -73,6 +73,9 @@ input[type="checkbox"] {
   padding: 5px;
 }
 
+.save {
+  float: right;
+}
 .accordion {
     background-color: #b28c5e;
     color: #382f25;
@@ -93,7 +96,7 @@ input[type="checkbox"] {
 
 .panel {
     padding: 0 18px;
-    display: none;
+    // display: none;
     background-color: #fff9f2;
     overflow: hidden;
 }

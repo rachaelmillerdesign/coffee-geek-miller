@@ -47,6 +47,25 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const addCoffee = function (event) {
+  event.preventDefault()
+  console.log('coffee recorded!')
+
+  const data = getFormFields(this)
+  api.onCoffeeSubmit(data)
+    .then(ui.addCoffeeSuccess)
+    .catch(ui.addCoffeeFailure)
+}
+const addTasting = function (event) {
+  event.preventDefault()
+  console.log('tasting recorded!')
+
+  const data = getFormFields(this)
+  api.onTastingSubmit(data)
+    .then(ui.addTastingSuccess)
+    .catch(ui.addedTastingFailure)
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~
 // HANDLERS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -56,6 +75,8 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#coffee').on('submit', addCoffee)
+  $('#tasting').on('submit', addTasting)
 }
 
 module.exports = {
