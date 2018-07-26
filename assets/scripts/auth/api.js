@@ -34,7 +34,7 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  // console.log('data is ', data)
+  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -44,6 +44,40 @@ const changePassword = function (data) {
     data
   })
 }
+const onTastingSubmit = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/tastings',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onCoffeeSubmit = function (data) {
+  console.log(data, store)
+  return $.ajax({
+    url: config.apiUrl + '/coffees',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onGetMyCoffees = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/coffees',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -52,5 +86,8 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  onTastingSubmit,
+  onCoffeeSubmit,
+  onGetMyCoffees
 }

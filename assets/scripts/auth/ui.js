@@ -8,7 +8,6 @@ const signUpSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
-  $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -27,6 +26,7 @@ const signInSuccess = function (data) {
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
+  store.user = data.user
 }
 
 const signInFailure = function (error) {
@@ -42,7 +42,6 @@ const signOutSuccess = function () {
   $('#sign-up').removeClass('hidden')
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
-  $('#sign-up')[0].reset()
   // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
@@ -65,6 +64,54 @@ const changePasswordFailure = function (error) {
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
+const addCoffeeSuccess = function () {
+  $('#message').text('added coffee successfully')
+  $('#message').css('background-color', 'green')
+  console.log('addCoffeeSuccess ran and nothing was returned!')
+}
+
+const addCoffeeFailure = function (error) {
+  $('#message').text('Error on add coffee')
+  $('#message').css('background-color', 'red')
+  console.error('addCoffeeFailure ran. Error is :', error)
+}
+const addTastingSuccess = function () {
+  $('#message').text('added tasting successfully')
+  $('#message').css('background-color', 'green')
+  console.log('addTastingSuccess ran and nothing was returned!')
+}
+
+const addTastingFailure = function (error) {
+  $('#message').text('Error on add tasting')
+  $('#message').css('background-color', 'red')
+  console.error('addTastingFailure ran. Error is :', error)
+}
+
+const getMyCoffeesSuccess = function () {
+  $('#message').text('got coffees successfully')
+  $('#message').css('background-color', 'green')
+  console.log('getMyCoffeesSuccess ran and nothing was returned!')
+}
+const getMyCoffeesFailure = function () {
+  $('#message').text('error on get coffees')
+  $('#message').css('background-color', 'green')
+  console.log('getMyCoffeesFailure ran and nothing was returned!')
+}
+
+const acc = document.getElementsByClassName('accordion')
+let i
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener('click', function () {
+    this.classList.toggle('active')
+    const panel = this.nextElementSibling
+    if (panel.style.display === 'block') {
+      panel.style.display = 'none'
+    } else {
+      panel.style.display = 'block'
+    }
+  })
+}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -77,5 +124,12 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  acc,
+  addCoffeeFailure,
+  addCoffeeSuccess,
+  addTastingSuccess,
+  addTastingFailure,
+  getMyCoffeesSuccess,
+  getMyCoffeesFailure
 }
