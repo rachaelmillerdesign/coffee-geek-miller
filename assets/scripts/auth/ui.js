@@ -63,20 +63,7 @@ const changePasswordFailure = function (error) {
   $('#message').css('background-color', 'red')
   console.error('changePasswordFailure ran. Error is :', error)
 }
-const acc = document.getElementsByClassName('accordion')
-let i
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener('click', function () {
-    this.classList.toggle('active')
-    const panel = this.nextElementSibling
-    if (panel.style.display === 'block') {
-      panel.style.display = 'none'
-    } else {
-      panel.style.display = 'block'
-    }
-  })
-}
 const addCoffeeSuccess = function () {
   $('#message').text('added coffee successfully')
   $('#message').css('background-color', 'green')
@@ -99,6 +86,32 @@ const addTastingFailure = function (error) {
   $('#message').css('background-color', 'red')
   console.error('addTastingFailure ran. Error is :', error)
 }
+
+const getMyCoffeesSuccess = function () {
+  $('#message').text('got coffees successfully')
+  $('#message').css('background-color', 'green')
+  console.log('getMyCoffeesSuccess ran and nothing was returned!')
+}
+const getMyCoffeesFailure = function () {
+  $('#message').text('error on get coffees')
+  $('#message').css('background-color', 'green')
+  console.log('getMyCoffeesFailure ran and nothing was returned!')
+}
+
+const acc = document.getElementsByClassName('accordion')
+let i
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener('click', function () {
+    this.classList.toggle('active')
+    const panel = this.nextElementSibling
+    if (panel.style.display === 'block') {
+      panel.style.display = 'none'
+    } else {
+      panel.style.display = 'block'
+    }
+  })
+}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -116,5 +129,7 @@ module.exports = {
   addCoffeeFailure,
   addCoffeeSuccess,
   addTastingSuccess,
-  addTastingFailure
+  addTastingFailure,
+  getMyCoffeesSuccess,
+  getMyCoffeesFailure
 }

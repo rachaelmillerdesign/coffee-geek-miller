@@ -51,7 +51,7 @@
       </fieldset>
     </form>
   </div>
-  <button class="accordion">COFFEE</button>
+  <button class="accordion">COFFEES</button>
   <form id="coffee" class="panel">
     <fieldset>
       <label for="roaster">ROASTER</label>
@@ -60,16 +60,18 @@
       <input type="text" id="blend" name="coffee[blend]">
       <label for="fave">FAVORITE</label>
       <input type="checkbox" id="fave" name="coffee[favorite]">
-      <label>RATING</label>
-      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-      <label for="tasting_notes">TASTING NOTES</label>
-      <input type="text" id="notes" name="tasting[tasting_notes]">
-      <button class="submit" value="tasting">SAVE</button>
+      <!-- <label>RATING</label>
+      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+      <button class="submit" value="coffee">SAVE</button>
     </fieldset>
   </form>
-  <button class="accordion">TECH SPECS</button>
+  <button class="accordion">TASTINGS</button>
   <form id="tasting" class="panel">
     <fieldset>
+      <label for="date">date</label>
+      <input type="date" id="date" name="tasting[date]">
+      <label for="tasting_notes">TASTING NOTES</label>
+      <input type="text" id="notes" name="tasting[tasting_notes]">
       <label for="grams_in">grams in</label>
       <input type="text" id="grams_in" name="tasting[grams_in]">
       <label for="grams_out">grams out</label>
@@ -80,9 +82,11 @@
       <input type="text" id="temperature" name="tasting[temperature]">
       <label for="extraction_notes">extraction notes</label>
       <input type="text" id="extraction_notes" name="tasting[extraction_notes]">
-      <button class="submit">SAVE</button>
+      <button class="submit" value="tasting">SAVE</button>
     </fieldset>
   </form>
+
+  <button class="accordion" id="getMyCoffees">GET MY COFFEES</button>
 </body>
 
 </html>
