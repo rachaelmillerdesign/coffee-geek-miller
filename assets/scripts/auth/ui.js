@@ -2,6 +2,14 @@
 
 const store = require('../store')
 
+// const closeOnClick = function (e) {
+//   $('body').click(function () {
+//     // if (!$(this.target).is('#modal')) {
+//     $('#modal'({show: false}))
+//     // }
+//   })
+// }
+
 const signUpSuccess = function (data) {
   // $('#message').text('Signed up successfully')
   // $('#message').css('background-color', 'green')
