@@ -18,6 +18,8 @@
 
 /* The Modal (background) */
 .modal {
+  background-color: #e2f984;
+  outline: none;
   display: none;
   position: fixed;
     top: 25%;
@@ -41,6 +43,7 @@
 
 /* The Close Button */
 .close {
+  outline: none;
   color: #9ece00;
   float: right;
   font-size: 24px;
@@ -48,6 +51,8 @@
 }
 
 .close-fail {
+  border: none;
+  outline: none;
   color: #f98900;
   float: right;
   font-size: 24px;
