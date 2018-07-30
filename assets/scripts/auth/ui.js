@@ -178,19 +178,38 @@ for (i = 0; i < acc.length; i++) {
 
 const generateCoffeeTableDiv = function (data) {
   const table = document.createElement('table')
+  let tableRow = document.createElement('tr')
+  let tableData = document.createElement('th')
+  tableData.innerHTML = 'roaster'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'blend'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'rating'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'favorite'
+  tableRow.appendChild(tableData)
+  table.appendChild(tableRow)
   for (let row = 0; row < data.coffees.length; row++) {
-    const tableRow = document.createElement('tr')
-    let tableData = document.createElement('td')
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
     tableData.innerHTML = data.coffees[row]['roaster']
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
     tableData.innerHTML = data.coffees[row]['blend']
     tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['rating']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['favorite']
+    tableRow.appendChild(tableData)
     table.appendChild(tableRow)
   }
   document.getElementById('myCoffeesTable').appendChild(table)
   console.log('adding table', table)
-// $('#myCoffeesTable').appendChild(table)
 }
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS

@@ -149,8 +149,8 @@ input[type="submit"] {
   background-color:#B28C5F;
 }
 .active, .submit:hover {
-    color: white;
-    background-color: #78572e;
+  color: white;
+  background-color: #78572e;
 }
 
 input[type="checkbox"] {
@@ -162,16 +162,16 @@ input[type="checkbox"] {
 }
 
 .accordion {
-    background-color: #b28c5e;
-    color: #382f25;
-    cursor: pointer;
-    padding: 3vh;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 6vw;
-    transition: 0.4s;
+  background-color: #b28c5e;
+  color: #382f25;
+  cursor: pointer;
+  padding: 3vh;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 6vw;
+  transition: 0.4s;
 }
 
 .active, .accordion:hover {
@@ -180,8 +180,16 @@ input[type="checkbox"] {
 }
 
 .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: B28C5F;
-    overflow: hidden;
+  padding: 0 18px;
+  display: none;
+  background-color: B28C5F;
+  overflow: hidden;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td, tr {
+  border: 1px solid black;
 }
