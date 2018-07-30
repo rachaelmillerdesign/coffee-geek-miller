@@ -16,6 +16,9 @@
   display: none;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// MODALS
+// ~~~~~~~~~~~~~~~~~~~~~
 /* The Modal (background) */
 .modal {
   background-color: #e2f984;
@@ -28,6 +31,7 @@
   z-index: 1;
   height: auto;
 }
+
 // .modal-body {
 //   background-color: #e2f984;
 // }
@@ -43,11 +47,13 @@
 
 /* The Close Button */
 .close {
+  border: none;
   outline: none;
   color: #9ece00;
   float: right;
   font-size: 24px;
   font-weight: 300;
+  padding: 4vw;
 }
 
 .close-fail {
@@ -57,6 +63,7 @@
   float: right;
   font-size: 24px;
   font-weight: 300;
+  padding: 4vw;
 }
 
 .close:hover,
@@ -66,17 +73,29 @@
   cursor: pointer;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// BODY
+// ~~~~~~~~~~~~~~~~~~~~~
 body {
   background-color: #f0e4cd;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// FONTS
+// ~~~~~~~~~~~~~~~~~~~~~
 h3 {
   // color: #382f25;
   text-align: left;
   float: left;
   font-weight: 400;
+  font-size: 4vw;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// STAR RATING
+// ~~~~~~~~~~~~~~~~~~~~~
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -94,6 +113,9 @@ h3 {
    float: right;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// SIGN IN OUT UP ETC FORMS
+// ~~~~~~~~~~~~~~~~~~~~~
 fieldset {
   display: block;
   -webkit-margin-start: 2px;
@@ -147,20 +169,26 @@ input {
 
 input[type="submit"] {
   background-color:#B28C5F;
+  border: none;
 }
+
 .active, .submit:hover {
-  color: white;
-  background-color: #78572e;
+  background-color: #9ece00;
 }
 
 input[type="checkbox"] {
-  zoom: 1.5;
+  zoom: 2;
 }
 
-.save {
-  float: right;
-}
+// .save {
+//   border: none;
+//   background-color: #f98900;
+//   float: right;
+// }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// ACCORDION AND PANELS
+// ~~~~~~~~~~~~~~~~~~~~~
 .accordion {
   background-color: #b28c5e;
   color: #382f25;
@@ -170,7 +198,7 @@ input[type="checkbox"] {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 6vw;
+  font-size: 5vw;
   transition: 0.4s;
 }
 
@@ -180,16 +208,39 @@ input[type="checkbox"] {
 }
 
 .panel {
-  padding: 0 18px;
+  padding: 0 3vm;
   display: none;
   background-color: B28C5F;
   overflow: hidden;
 }
+// ~~~~~~~~~~~~~~~~~~~~~
+// TABLES
+// ~~~~~~~~~~~~~~~~~~~~~
 
 table {
   border-collapse: collapse;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
 }
 
 table, th, td, tr {
-  border: 1px solid black;
+  border: 1px solid #B28C5F;
+  color: #2B2211;
+  font-size: 2vw;
+  min-width: 100%;
+  margin: 0 auto;
+}
+
+td,tr {
+  background-color: white;
+  padding: 1vw;
+}
+
+th {
+  background-color: #f98900;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2vw;
 }

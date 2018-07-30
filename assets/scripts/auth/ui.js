@@ -28,7 +28,6 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  $('#game-new').removeClass('unclickable')
   $('#sign-out').removeClass('hidden')
   $('#sign-in').addClass('hidden')
   $('#sign-up').addClass('hidden')
@@ -207,6 +206,8 @@ const generateCoffeeTableDiv = function (data) {
     tableData.innerHTML = data.coffees[row]['favorite']
     tableRow.appendChild(tableData)
     table.appendChild(tableRow)
+    // for (row = 0; row < tbl.rows.length; i++) {
+    //   createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col')
   }
   document.getElementById('myCoffeesTable').appendChild(table)
   console.log('adding table', table)

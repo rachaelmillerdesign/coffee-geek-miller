@@ -111,6 +111,14 @@
       </button>
     </div>
 
+    <div class="modal" id="getMyCoffeesFailure" tabindex="-1" role="dialog">
+      <button type="button" class="close-fail" data-dismiss="modal" aria-label="Close">
+        <div class="modal-body">
+          <h4>please sign in to view your coffees!</h4>
+        </div>
+      </button>
+    </div>
+
   <button class="accordion">SIGN IN / SIGN UP</button>
   <div class="panel">
     <form id="sign-up">
@@ -159,6 +167,8 @@
       <input type="checkbox" id="fave" name="coffee[favorite]">
       <!-- <label>RATING</label>
       <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+      <label for='id' class="hidden">ID</label>
+      <input type="text" class="hidden" id="ID" name="coffee[id]">
       <button class="submit" value="coffee">SAVE</button>
     </fieldset>
   </form>
