@@ -78,6 +78,27 @@ const onGetMyCoffees = function (data) {
   })
 }
 
+const onGetMyTastings = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/tastings',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onGetMyId = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/users',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -89,5 +110,7 @@ module.exports = {
   changePassword,
   onTastingSubmit,
   onCoffeeSubmit,
-  onGetMyCoffees
+  onGetMyCoffees,
+  onGetMyTastings,
+  onGetMyId
 }

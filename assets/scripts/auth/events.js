@@ -28,6 +28,15 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+const onGetMyId = function (event) {
+  event.preventDefault()
+  console.log('get my ID ran!')
+
+  const data = getFormFields('id')
+  api.signIn('id')
+    .then(ui.getMyId)
+}
+
 const onSignOut = function (event) {
   event.preventDefault()
   console.log('sign out ran')
@@ -76,6 +85,22 @@ const getMyCoffees = function (event) {
     .catch(ui.getMyCoffeesFailure)
 }
 
+const getMyTastings = function (event) {
+  event.preventDefault()
+  console.log('got all tastings!')
+
+  const data = getFormFields(this)
+  api.onGetMyTastings(data)
+    .then(ui.getMyTastingsSuccess)
+    .catch(ui.getMyTastingsFailure)
+}
+
+const getMyId = function (event) {
+  event.preventDefault()
+const data = getFormFields(this)
+  api.onGetMyId(data)
+  .then(ui.getMyIdSuccess)
+}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // HANDLERS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -88,6 +113,8 @@ const addHandlers = () => {
   $('#coffee').on('submit', addCoffee)
   $('#tasting').on('submit', addTasting)
   $('#getMyCoffees').on('click', getMyCoffees)
+  $('#getMyTastings').on('click', getMyTastings)
+  $('#getMyId').on('submit', onGetMyId)
 }
 
 module.exports = {

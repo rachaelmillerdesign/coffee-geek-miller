@@ -78,7 +78,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~
 body {
   background-color: #f0e4cd;
-  max-width: 400px;
+  // max-width: 400px;
   margin: 0 auto;
 }
 
@@ -109,7 +109,7 @@ h3 {
 
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {
-   content: "\2605";
+   content: '\2605';
    float: right;
 }
 
@@ -130,15 +130,15 @@ fieldset {
   // border-color: threedface;
   // border-image: initial;
 }
-legend {
-  display: block;
+// legend {
+//   display: block;
     // -webkit-padding-start: 2px;
     // -webkit-padding-end: 2px;
     // border-width: initial;
     // border-style: none;
     // border-color: initial;
     // border-image: initial;
-}
+// }
 
 #notes {
   -webkit-box-sizing: border-box;
@@ -159,27 +159,37 @@ input {
   display: inline-block;
   float: right;
   clear: right;
+  padding: .5vw;
 }
 
 .submit {
   padding: 8px;
   margin: 10px;
   float: right;
+  font-size: 2vw;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background-color:#B28C5F;
   border: none;
+  padding: 1 vw;
 }
 
 .active, .submit:hover {
   background-color: #9ece00;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   zoom: 2;
 }
 
+#myId {
+  background-color: #9ece00;
+  padding: 6px;
+  width: 100%;
+  border: 1px solid #4F3828;
+  text-align: right;
+}
 // .save {
 //   border: none;
 //   background-color: #f98900;
@@ -198,7 +208,7 @@ input[type="checkbox"] {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 5vw;
+  font-size: 6vw;
   transition: 0.4s;
 }
 
@@ -242,5 +252,9 @@ th {
   background-color: #f98900;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 2vw;
+  padding: 1.5vw;
 }
+
+// @media only screen and (max-width: 600px) and (min-width: 400px) {
+//
+// }

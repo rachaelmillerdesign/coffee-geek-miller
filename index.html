@@ -130,7 +130,7 @@
         <input type="submit" value="Sign up!">
       </fieldset>
     </form>
-
+    <div id="myId" class="hidden">testing</div>
     <form id="sign-in">
       <fieldset>
         <legend>Sign in!</legend>
@@ -165,8 +165,8 @@
       <input type="text" id="blend" name="coffee[blend]">
       <label for="fave">FAVORITE</label>
       <input type="checkbox" id="fave" name="coffee[favorite]">
-      <!-- <label>RATING</label>
-      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+      <label>RATING</label>
+      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       <label for='id' class="hidden">ID</label>
       <input type="text" class="hidden" id="ID" name="coffee[id]">
       <button class="submit" value="coffee">SAVE</button>
@@ -193,9 +193,22 @@
     </fieldset>
   </form>
 
-  <button class="accordion" id="getMyCoffees">GET MY COFFEES</button>
+  <button class="accordion" id="getMyCoffees">MY COFFEES</button>
     <div id="myCoffeesTable" class="panel"></div>
 
+  <button class="accordion" id="getMyTastings">MY TASTINGS</button>
+    <div id="myTastingsTable" class="panel"></div>
+
+  <button class="accordion" id="editMyTastings">EDIT or DELETE</button>
+    <form id="showCoffeeById"class="panel">
+      <input type="text" id="id" placeholder="Enter ID" name="coffee[id]">
+      <button class="submit" value="submitId">SUBMIT ID</button>
+      <button class="submit hidden" value="update">UPDATE</button>
+      <button class="submit hidden" value="delete">DELETE</button>
+        <table id="singleCoffee" class="hidden">
+          <tbody id="singleCoffeeTable"></tbody>
+        </table>
+    </form>
 </body>
 
 </html>
