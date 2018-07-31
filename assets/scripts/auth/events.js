@@ -95,12 +95,6 @@ const getMyTastings = function (event) {
     .catch(ui.getMyTastingsFailure)
 }
 
-const getMyId = function (event) {
-  event.preventDefault()
-const data = getFormFields(this)
-  api.onGetMyId(data)
-  .then(ui.getMyIdSuccess)
-}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // HANDLERS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -114,7 +108,6 @@ const addHandlers = () => {
   $('#tasting').on('submit', addTasting)
   $('#getMyCoffees').on('click', getMyCoffees)
   $('#getMyTastings').on('click', getMyTastings)
-  $('#getMyId').on('submit', onGetMyId)
 }
 
 module.exports = {

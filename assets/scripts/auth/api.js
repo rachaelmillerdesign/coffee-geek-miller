@@ -89,16 +89,6 @@ const onGetMyTastings = function (data) {
   })
 }
 
-const onGetMyId = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/users',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -111,6 +101,5 @@ module.exports = {
   onTastingSubmit,
   onCoffeeSubmit,
   onGetMyCoffees,
-  onGetMyTastings,
-  onGetMyId
+  onGetMyTastings
 }

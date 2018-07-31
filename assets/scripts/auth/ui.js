@@ -41,12 +41,8 @@ const signInSuccess = function (data) {
     $('#signInSuccess').modal('hide')
   }, 2000)
   store.user = data.user
-}
-let getMyId = function (data) {
-  if ('signInSuccess') {
-    document.getElementById('myId').innerHTML
-    return data.user.id
-  }
+  console.log(store.user.id)
+  $('#myId').html(`<p>${store.user.id}</p>`)
 }
 
 const signInFailure = function (error) {
@@ -156,14 +152,17 @@ const getMyCoffeesSuccess = function (data) {
   // targeting the div element below get my coffees button where the table will go
 }
 
-const getMyCoffeesFailure = function () {
-  $('#getMyCoffeesFailure').modal({
+const getMyTastingsSuccess = function (data) {
+  $('#getMyTastingsSuccess').modal({
     show: true
   })
   setTimeout(function () {
-    $('#getMyCoffeesFailure').modal('hide')
+    $('#getMyTastingsSuccess').modal('hide')
   }, 2000)
-  console.log('getMyCoffeesFailure ran and nothing was returned!')
+  console.log('getMyTastingsSuccess ran and the data is ', data)
+  console.log('In getMyTastingsSuccess and data.tastings is ', data.coffees)
+  generateTastingsTable(data)
+  // targeting the div element below get my coffees button where the table will go
 }
 
 let i
@@ -294,6 +293,10 @@ const generateTastingsTable = function (data) {
   document.getElementById('myTastingsTable').appendChild(table)
   console.log('adding table', table)
 }
+
+// const getMyId = function {
+//
+// }
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -312,8 +315,7 @@ module.exports = {
   addTastingSuccess,
   addTastingFailure,
   getMyCoffeesSuccess,
-  getMyCoffeesFailure,
   generateCoffeeTableDiv,
   generateTastingsTable,
-  getMyId
+  getMyTastingsSuccess
 }
