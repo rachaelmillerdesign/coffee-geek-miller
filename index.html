@@ -158,6 +158,7 @@
   </div>
   <button class="accordion">COFFEES</button>
   <form id="coffee" class="panel">
+    <div id="coffeeId" class="hidden"></div>
     <fieldset>
       <label for="roaster">ROASTER</label>
       <input type="text" id="roaster" name="coffee[roaster]">
@@ -165,7 +166,7 @@
       <input type="text" id="blend" name="coffee[blend]">
       <label for="fave">FAVORITE</label>
       <input type="checkbox" id="fave" name="coffee[favorite]">
-      <label>RATING</label>
+      <div class="rating">GNITAR</label>
       <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       <label for='id' class="hidden">ID</label>
       <input type="text" class="hidden" id="ID" name="coffee[id]">
@@ -202,12 +203,10 @@
   <button class="accordion" id="editMyTastings">EDIT or DELETE</button>
     <form id="showCoffeeById"class="panel">
       <input type="text" id="id" placeholder="Enter ID" name="coffee[id]">
-      <button class="submit" value="submitId">SUBMIT ID</button>
-      <button class="submit hidden" value="update">UPDATE</button>
-      <button class="submit hidden" value="delete">DELETE</button>
-        <table id="singleCoffee" class="hidden">
-          <tbody id="singleCoffeeTable"></tbody>
-        </table>
+      <button class="submit" id="singleCoffee" value="coffee">SUBMIT</button>
+      <div id="singleCoffeeTable"></div>
+      <!-- <button class="submit hidden" value="update">UPDATE</button>
+      <button class="submit hidden" value="delete">DELETE</button> -->
     </form>
 </body>
 

@@ -66,10 +66,30 @@ const onCoffeeSubmit = function (data) {
     data
   })
 }
-
+const onGetOneCoffeeId = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/coffees',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 const onGetMyCoffees = function (data) {
   return $.ajax({
     url: config.apiUrl + '/coffees',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onShowCoffeeById = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/coffees/' + data.coffee.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -101,5 +121,7 @@ module.exports = {
   onTastingSubmit,
   onCoffeeSubmit,
   onGetMyCoffees,
-  onGetMyTastings
+  onGetMyTastings,
+  onGetOneCoffeeId,
+  onShowCoffeeById
 }

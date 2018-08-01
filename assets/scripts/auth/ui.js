@@ -140,12 +140,6 @@ const addTastingFailure = function (error) {
 }
 
 const getMyCoffeesSuccess = function (data) {
-  $('#getMyCoffeesSuccess').modal({
-    show: true
-  })
-  setTimeout(function () {
-    $('#getMyCoffeesSuccess').modal('hide')
-  }, 2000)
   console.log('getMyCoffeesSuccess ran and the data is ', data)
   console.log('In getMyCoffeeSuccess and data.coffees is ', data.coffees)
   generateCoffeeTableDiv(data)
@@ -163,6 +157,18 @@ const getMyTastingsSuccess = function (data) {
   console.log('In getMyTastingsSuccess and data.tastings is ', data.coffees)
   generateTastingsTable(data)
   // targeting the div element below get my coffees button where the table will go
+}
+
+const getMyCoffeeByIdSuccess = function (data) {
+  console.table(data.coffee)
+  $('#singleCoffeeTable').html('')
+
+  data.coffees.forEach(coffee => {
+    const coffeeHTML = (`
+    <div>${coffee.roaster}, ${coffee.blend}, ${coffee.rating}, ${coffee.favorite}</div>
+    `)
+    $('#singleCoffeeTable').append(coffeeHTML)
+  })
 }
 
 let i
@@ -294,9 +300,6 @@ const generateTastingsTable = function (data) {
   console.log('adding table', table)
 }
 
-// const getMyId = function {
-//
-// }
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -317,5 +320,6 @@ module.exports = {
   getMyCoffeesSuccess,
   generateCoffeeTableDiv,
   generateTastingsTable,
-  getMyTastingsSuccess
+  getMyTastingsSuccess,
+  getMyCoffeeByIdSuccess
 }

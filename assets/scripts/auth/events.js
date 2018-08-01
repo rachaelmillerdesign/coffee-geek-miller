@@ -32,8 +32,8 @@ const onGetMyId = function (event) {
   event.preventDefault()
   console.log('get my ID ran!')
 
-  const data = getFormFields('id')
-  api.signIn('id')
+  const data = getFormFields(this)
+  // api.signIn('id')
     .then(ui.getMyId)
 }
 
@@ -74,7 +74,14 @@ const addTasting = function (event) {
     .then(ui.addTastingSuccess)
     .catch(ui.addedTastingFailure)
 }
+const getOneCoffeeId = function (event) {
+  event.preventDefault()
+  console.log('get my coffee ID ran!')
 
+  const data = getFormFields('id')
+  api.onGetOneCoffeeId(data)
+    .then(ui.getCoffeeId)
+}
 const getMyCoffees = function (event) {
   event.preventDefault()
   console.log('got all coffees!')
@@ -95,6 +102,13 @@ const getMyTastings = function (event) {
     .catch(ui.getMyTastingsFailure)
 }
 
+const ShowCoffeeById = function (event) {
+  event.preventDefault()
+
+  const data = getFormFields(this)
+  api.onShowCoffeeById(data)
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~
 // HANDLERS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -108,6 +122,8 @@ const addHandlers = () => {
   $('#tasting').on('submit', addTasting)
   $('#getMyCoffees').on('click', getMyCoffees)
   $('#getMyTastings').on('click', getMyTastings)
+  $('#getOneCoffeeId').on('click', getOneCoffeeId)
+  $('#singleCoffee').on('click', ShowCoffeeById)
 }
 
 module.exports = {
