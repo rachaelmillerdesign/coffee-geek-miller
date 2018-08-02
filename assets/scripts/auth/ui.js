@@ -12,6 +12,7 @@ const signUpSuccess = function (data) {
   setTimeout(function () {
     $('#signUpSuccess').modal('hide')
   }, 2000)
+  $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -24,6 +25,7 @@ const signUpFailure = function (error) {
       show: false
     })
   }, 2000)
+  $('#sign-up')[0].reset()
   console.error('signUpFailure ran. Error is :', error)
 }
 
@@ -42,6 +44,7 @@ const signInSuccess = function (data) {
   }, 2000)
   store.user = data.user
   console.log(store.user.id)
+  $('#sign-in')[0].reset()
   $('#myId').html(`<p>${store.user.id}</p>`)
 }
 
@@ -52,6 +55,7 @@ const signInFailure = function (error) {
   setTimeout(function () {
     $('#signInFailure').modal('hide')
   }, 2000)
+  $('#sign-in')[0].reset()
   console.error('signInFailure ran. Error is :', error)
 }
 
@@ -66,6 +70,7 @@ const signOutSuccess = function () {
   setTimeout(function () {
     $('#signOutSuccess').modal('hide')
   }, 2000)
+  $('#sign-out')[0].reset()
   // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
@@ -77,6 +82,7 @@ const signOutFailure = function (error) {
   setTimeout(function () {
     $('#signOutFailure').modal('hide')
   }, 2000)
+  $('#sign-out')[0].reset()
   console.error('signOutFailure ran. Error is :', error)
 }
 
@@ -87,6 +93,7 @@ const changePasswordSuccess = function () {
   setTimeout(function () {
     $('#changePasswordSuccess').modal('hide')
   }, 2000)
+  $('#change-password')[0].reset()
   // console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
@@ -97,6 +104,7 @@ const changePasswordFailure = function (error) {
   setTimeout(function () {
     $('#changePasswordFailure').modal('hide')
   }, 2000)
+  $('#change-password')[0].reset()
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
@@ -107,6 +115,7 @@ const addCoffeeSuccess = function () {
   setTimeout(function () {
     $('#addCoffeeSuccess').modal('hide')
   }, 2000)
+  $('#coffee')[0].reset()
   console.log('addCoffeeSuccess ran and nothing was returned!')
 }
 
@@ -126,6 +135,7 @@ const addTastingSuccess = function () {
   setTimeout(function () {
     $('#addTastingSuccess').modal('hide')
   }, 2000)
+  $('#tasting')[0].reset()
   console.log('addTastingSuccess ran and nothing was returned!')
 }
 
@@ -139,9 +149,9 @@ const addTastingFailure = function (error) {
   console.error('addTastingFailure ran. Error is :', error)
 }
 
-const getMyCoffeesSuccess = function (data) {
-  console.log('getMyCoffeesSuccess ran and the data is ', data)
-  console.log('In getMyCoffeeSuccess and data.coffees is ', data.coffees)
+const getAllCoffeesSuccess = function (data) {
+  console.log('getAllCoffeesSuccess ran and the data is ', data)
+  console.log('In getAllCoffeeSuccess and data.coffees is ', data.coffees)
   generateCoffeeTableDiv(data)
   // targeting the div element below get my coffees button where the table will go
 }
@@ -160,6 +170,7 @@ const getMyTastingsSuccess = function (data) {
 }
 
 const getMyCoffeeByIdSuccess = function (data) {
+  document.getElementById('id')
   console.table(data.coffee)
   $('#singleCoffeeTable').html('')
 
@@ -181,6 +192,7 @@ for (i = 0; i < acc.length; i++) {
     const panel = this.nextElementSibling
     if (panel.style.display === 'block') {
       panel.style.display = 'none'
+      $('table').empty()
     } else {
       panel.style.display = 'block'
     }
@@ -242,10 +254,10 @@ const generateTastingsTable = function (data) {
   tableData.innerHTML = 'rating'
   tableRow.appendChild(tableData)
   tableData = document.createElement('th')
-  tableData.innerHTML = 'favorite'
+  tableData.innerHTML = 'fave'
   tableRow.appendChild(tableData)
   tableData = document.createElement('th')
-  tableData.innerHTML = 'tasting_notes'
+  tableData.innerHTML = 'notes'
   tableRow.appendChild(tableData)
   tableData = document.createElement('th')
   tableData.innerHTML = 'grams_in'
@@ -256,7 +268,7 @@ const generateTastingsTable = function (data) {
   tableData = document.createElement('th')
   tableData.innerHTML = 'time'
   tableData = document.createElement('th')
-  tableData.innerHTML = 'temperature'
+  tableData.innerHTML = 'temp'
   tableRow.appendChild(tableData)
   tableData = document.createElement('th')
   tableData.innerHTML = 'extraction_notes'
@@ -317,7 +329,7 @@ module.exports = {
   addCoffeeSuccess,
   addTastingSuccess,
   addTastingFailure,
-  getMyCoffeesSuccess,
+  getAllCoffeesSuccess,
   generateCoffeeTableDiv,
   generateTastingsTable,
   getMyTastingsSuccess,

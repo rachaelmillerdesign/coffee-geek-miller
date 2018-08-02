@@ -121,6 +121,7 @@
 
   <button class="accordion">SIGN IN / SIGN UP</button>
   <div class="panel">
+    <div id="myId" class="hidden"></div>
     <form id="sign-up">
       <fieldset>
         <legend>Sign up!</legend>
@@ -130,7 +131,6 @@
         <input type="submit" value="Sign up!">
       </fieldset>
     </form>
-    <div id="myId" class="hidden"></div>
     <form id="sign-in">
       <fieldset>
         <legend>Sign in!</legend>
@@ -156,7 +156,7 @@
       </fieldset>
     </form>
   </div>
-  <button class="accordion">COFFEES</button>
+  <button class="accordion">ADD COFFEE</button>
   <form id="coffee" class="panel">
     <div id="coffeeId" class="hidden"></div>
     <fieldset>
@@ -166,14 +166,14 @@
       <input type="text" id="blend" name="coffee[blend]">
       <label for="fave">FAVORITE</label>
       <input type="checkbox" id="fave" name="coffee[favorite]">
-      <div class="rating">GNITAR</label>
-      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+      <label class="rating">GNITAR</label>
+      <div class=star><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
       <label for='id' class="hidden">ID</label>
       <input type="text" class="hidden" id="ID" name="coffee[id]">
       <button class="submit" value="coffee">SAVE</button>
     </fieldset>
   </form>
-  <button class="accordion">TASTINGS</button>
+  <button class="accordion">ADD TASTING</button>
   <form id="tasting" class="panel">
     <fieldset>
       <label for="date">date</label>
@@ -181,27 +181,27 @@
       <label for="tasting_notes">TASTING NOTES</label>
       <input type="text" id="notes" name="tasting[tasting_notes]">
       <label for="grams_in">grams in</label>
-      <input type="text" id="grams_in" name="tasting[grams_in]">
+      <input type="number" id="grams_in" name="tasting[grams_in]">
       <label for="grams_out">grams out</label>
-      <input type="text" id="grams_out" name="tasting[grams_out]">
+      <input type="number" id="grams_out" name="tasting[grams_out]">
       <label for="time">time</label>
       <input type="text" id="time" name="tasting[time]">
       <label for="temperature">temperature</label>
-      <input type="text" id="temperature" name="tasting[temperature]">
+      <input type="number" id="temperature" name="tasting[temperature]">
       <label for="extraction_notes">extraction notes</label>
       <input type="text" id="extraction_notes" name="tasting[extraction_notes]">
       <button class="submit" value="tasting">SAVE</button>
     </fieldset>
   </form>
 
-  <button class="accordion" id="getMyCoffees">MY COFFEES</button>
+  <button class="accordion" id="getMyCoffees">VIEW ALL COFFEES</button>
     <div id="myCoffeesTable" class="panel"></div>
 
   <button class="accordion" id="getMyTastings">MY TASTINGS</button>
     <div id="myTastingsTable" class="panel"></div>
 
   <button class="accordion" id="editMyTastings">EDIT or DELETE</button>
-    <form id="showCoffeeById"class="panel">
+    <form id="showCoffeeById" class="panel">
       <input type="text" id="id" placeholder="Enter ID" name="coffee[id]">
       <button class="submit" id="singleCoffee" value="coffee">SUBMIT</button>
       <div id="singleCoffeeTable"></div>

@@ -76,18 +76,26 @@ const onGetOneCoffeeId = function (data) {
     data
   })
 }
-const onGetMyCoffees = function (data) {
+const onGetAllCoffees = function (data) {
   return $.ajax({
     url: config.apiUrl + '/coffees',
     method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
     data
   })
 }
+// const onGetMyCoffees = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 const onShowCoffeeById = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/coffees/' + data.coffee.id,
     method: 'GET',
@@ -120,7 +128,7 @@ module.exports = {
   changePassword,
   onTastingSubmit,
   onCoffeeSubmit,
-  onGetMyCoffees,
+  onGetAllCoffees,
   onGetMyTastings,
   onGetOneCoffeeId,
   onShowCoffeeById

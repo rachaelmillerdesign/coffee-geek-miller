@@ -82,14 +82,14 @@ const getOneCoffeeId = function (event) {
   api.onGetOneCoffeeId(data)
     .then(ui.getCoffeeId)
 }
-const getMyCoffees = function (event) {
+const getAllCoffees = function (event) {
   event.preventDefault()
   console.log('got all coffees!')
 
   const data = getFormFields(this)
-  api.onGetMyCoffees(data)
-    .then(ui.getMyCoffeesSuccess)
-    .catch(ui.getMyCoffeesFailure)
+  api.onGetAllCoffees(data)
+    .then(ui.getAllCoffeesSuccess)
+    .catch(ui.getAllCoffeesFailure)
 }
 
 const getMyTastings = function (event) {
@@ -102,7 +102,7 @@ const getMyTastings = function (event) {
     .catch(ui.getMyTastingsFailure)
 }
 
-const ShowCoffeeById = function (event) {
+const showCoffeeById = function (event) {
   event.preventDefault()
 
   const data = getFormFields(this)
@@ -120,10 +120,10 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#coffee').on('submit', addCoffee)
   $('#tasting').on('submit', addTasting)
-  $('#getMyCoffees').on('click', getMyCoffees)
+  $('#getAllCoffees').on('click', getAllCoffees)
   $('#getMyTastings').on('click', getMyTastings)
   $('#getOneCoffeeId').on('click', getOneCoffeeId)
-  $('#singleCoffee').on('click', ShowCoffeeById)
+  $('#showCoffeeById').on('submit', showCoffeeById)
 }
 
 module.exports = {
