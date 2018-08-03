@@ -168,18 +168,34 @@ const getMyTastingsSuccess = function (data) {
   generateTastingsTable(data)
 }
 
-const getMyCoffeeByIdSuccess = function (data) {
-  document.getElementById('id')
-  console.table(data.coffee)
-  $('#singleCoffeeTable').html('')
+const generateTastingDataSuccess = function (data) {
+  event.preventDefault()
+  const tastingData = getFormFields(event.target)
+  const tasting = data.tasting
 
-  data.coffees.forEach(coffee => {
-    const coffeeHTML = (`
-    <div>${coffee.roaster}, ${coffee.blend}, ${coffee.rating}, ${coffee.favorite}</div>
-    `)
-    $('#singleCoffeeTable').append(coffeeHTML)
-  })
 }
+
+
+//
+// const generateSingleTastingData = function (data) {
+//   console.log(`at generateTastingData data is ${data}`)
+//   console.log(`data.tasting is ${data.tasting}`)
+//   console.log(`data json is ${JSON.stringify(data)}`)
+//   let dataFormat = data.tasting
+//   // dataFormat = dataFormat.toString()
+//   dataFormat = JSON.stringify(dataFormat)
+//   document.getElementById('singleTastingTable').append(dataFormat)
+//   // data.tasting.forEach(tasting => {
+//   //   const tastingData = document.createElement('data')
+//   //   document.getElementById('singleTastingTable').append(tastingData)
+//   //   console.log('adding tasting', tastingData)
+//   // }
+// }
+//
+// const getMyTastingByIdSuccess = function (data) {
+//   console.log(data.tasting, 'OK!')
+//   generateSingleTastingData(data)
+// }
 
 let i
 const acc = document.getElementsByClassName('accordion')
@@ -332,5 +348,5 @@ module.exports = {
   generateCoffeeTableDiv,
   generateTastingsTable,
   getMyTastingsSuccess,
-  getMyCoffeeByIdSuccess
+  getMyTastingByIdSuccess
 }

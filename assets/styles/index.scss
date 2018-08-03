@@ -184,16 +184,22 @@ input {
   float: right;
   // font-size: 3vw;
   font-size: 1rem;
+  border: none;
+  background-color: none;
 }
 
 input[type='submit'] {
   background-color:#B28C5F;
   border: none;
   padding: 1 vw;
+  background-color: none;
 }
 
 .active, .submit:hover {
   background-color: #9ece00;
+  border: none;
+  -webkit-appearance: none;
+  background-color: none;
 }
 
 #fave {
@@ -206,12 +212,12 @@ input[type='submit'] {
   color: #2B2211;
   background-color: #9ece00;
   width: 100%;
-  border: 1px solid #4F3828;
+  // border: 1px solid #4F3828;
   text-align: right;
   font-weight: 500;
-  height: 1.8vw;
+  height: 3vw;
   font-size: 1.5rem;
-  padding-bottom: 8vw;
+  // padding-bottom: 8vw;
 }
 
 p {
@@ -237,7 +243,7 @@ margin-right: 20px;
   text-align: left;
   outline: none;
   // font-size: 6vw;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   transition: 0.4s;
 }
 
