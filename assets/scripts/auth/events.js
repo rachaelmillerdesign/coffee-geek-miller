@@ -65,6 +65,7 @@ const addCoffee = function (event) {
     .then(ui.addCoffeeSuccess)
     .catch(ui.addCoffeeFailure)
 }
+
 const addTasting = function (event) {
   event.preventDefault()
   console.log('tasting recorded!')
@@ -74,6 +75,7 @@ const addTasting = function (event) {
     .then(ui.addTastingSuccess)
     .catch(ui.addedTastingFailure)
 }
+
 const getOneCoffeeId = function (event) {
   event.preventDefault()
   console.log('get my coffee ID ran!')
@@ -82,6 +84,7 @@ const getOneCoffeeId = function (event) {
   api.onGetOneCoffeeId(data)
     .then(ui.getCoffeeId)
 }
+
 const getAllCoffees = function (event) {
   event.preventDefault()
   console.log('got all coffees!')

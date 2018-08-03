@@ -45,7 +45,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   console.log(store.user.id)
   $('#sign-in')[0].reset()
-  $('#myId').html(`<p>${store.user.id}</p>`)
+  // $('#myId').html(`<p>${store.user.id}</p>`)
 }
 
 const signInFailure = function (error) {
@@ -128,6 +128,7 @@ const addCoffeeFailure = function (error) {
   }, 2000)
   console.error('addCoffeeFailure ran. Error is :', error)
 }
+
 const addTastingSuccess = function () {
   $('#addTastingSuccess').modal({
     show: true
@@ -153,7 +154,6 @@ const getAllCoffeesSuccess = function (data) {
   console.log('getAllCoffeesSuccess ran and the data is ', data)
   console.log('In getAllCoffeeSuccess and data.coffees is ', data.coffees)
   generateCoffeeTableDiv(data)
-  // targeting the div element below get my coffees button where the table will go
 }
 
 const getMyTastingsSuccess = function (data) {
@@ -166,7 +166,6 @@ const getMyTastingsSuccess = function (data) {
   console.log('getMyTastingsSuccess ran and the data is ', data)
   console.log('In getMyTastingsSuccess and data.tastings is ', data.coffees)
   generateTastingsTable(data)
-  // targeting the div element below get my coffees button where the table will go
 }
 
 const getMyCoffeeByIdSuccess = function (data) {
@@ -188,11 +187,11 @@ const acc = document.getElementsByClassName('accordion')
 for (i = 0; i < acc.length; i++) {
   console.log('counter: ', i)
   acc[i].addEventListener('click', function () {
+    $('table').empty()
     this.classList.toggle('active')
     const panel = this.nextElementSibling
     if (panel.style.display === 'block') {
       panel.style.display = 'none'
-      $('table').empty()
     } else {
       panel.style.display = 'block'
     }

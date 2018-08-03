@@ -44,6 +44,7 @@ const changePassword = function (data) {
     data
   })
 }
+
 const onTastingSubmit = function (data) {
   return $.ajax({
     url: config.apiUrl + '/tastings',
@@ -66,6 +67,7 @@ const onCoffeeSubmit = function (data) {
     data
   })
 }
+
 const onGetOneCoffeeId = function (data) {
   return $.ajax({
     url: config.apiUrl + '/coffees',
@@ -76,6 +78,7 @@ const onGetOneCoffeeId = function (data) {
     data
   })
 }
+
 const onGetAllCoffees = function (data) {
   return $.ajax({
     url: config.apiUrl + '/coffees',
@@ -83,6 +86,7 @@ const onGetAllCoffees = function (data) {
     data
   })
 }
+
 // const onGetMyCoffees = function (data) {
 //   return $.ajax({
 //     url: config.apiUrl + '/coffees',
@@ -99,9 +103,9 @@ const onShowCoffeeById = function (data) {
   return $.ajax({
     url: config.apiUrl + '/coffees/' + data.coffee.id,
     method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // },
     data
   })
 }
