@@ -178,7 +178,14 @@ const generateOneTastingByIdTable = function (data) {
   const table = document.createElement('table')
   let tableRow = document.createElement('tr')
   let tableData
-  const fields = ['roaster', 'blend', 'rating', 'fave', 'notes', 'grams_in', 'grams_out', 'time', 'temp', 'extraction_notes']
+  console.log('generateOneTastingByIdTable and the data is ', data)
+  const coffeeFields = ['roaster', 'blend', 'rating', 'fave']
+  const fields = ['notes', 'grams_in', 'grams_out', 'time', 'temp', 'extraction_notes']
+  for (let i = 0; i < coffeeFields.length; i++) {
+    tableData = document.createElement('th')
+    tableData.innerHTML = coffeeFields[i]
+    tableRow.appendChild(tableData)
+  }
   for (let i = 0; i < fields.length; i++) {
     tableData = document.createElement('th')
     tableData.innerHTML = fields[i]
@@ -186,9 +193,14 @@ const generateOneTastingByIdTable = function (data) {
   }
   table.appendChild(tableRow)
   tableRow = document.createElement('tr')
+  for (let i = 0; i < coffeeFields.length; i++) {
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tasting.coffee[coffeeFields[i]]
+    tableRow.appendChild(tableData)
+  }
   for (let i = 0; i < fields.length; i++) {
     tableData = document.createElement('td')
-    tableData.innerHTML = data[fields[i]]
+    tableData.innerHTML = data.tasting[fields[i]]
     tableRow.appendChild(tableData)
   }
   table.appendChild(tableRow)
