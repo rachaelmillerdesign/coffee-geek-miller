@@ -56,17 +56,17 @@ const onTastingSubmit = function (data) {
   })
 }
 
-const onCoffeeSubmit = function (data) {
-  console.log(data, store)
-  return $.ajax({
-    url: config.apiUrl + '/coffees',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+// const onCoffeeSubmit = function (data) {
+//   console.log(data, store)
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 // const onGetOneCoffeeId = function (data) {
 //   return $.ajax({
@@ -98,22 +98,21 @@ const onGetAllCoffees = function (data) {
 //   })
 // }
 
-const onShowCoffeeById = function (data) {
-  console.log(data)
-  return $.ajax({
-    url: config.apiUrl + '/coffees/' + data.coffee.id,
-    method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // },
-    data
-  })
-}
+// const onShowCoffeeById = function (data) {
+//   console.log(data)
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees/' + data.coffee.id,
+//     method: 'GET',
+//     // headers: {
+//     //   Authorization: 'Token token=' + store.user.token
+//     // },
+//     data
+//   })
+// }
 
-const onShowTastingById = function (data) {
-  console.log('inside api.showTasting and the data is', data)
+const onGetAllTastings = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/tastings/' + data.tasting.id,
+    url: config.apiUrl + '/tastings',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -122,9 +121,10 @@ const onShowTastingById = function (data) {
   })
 }
 
-const onGetMyTastings = function (data) {
+const onGetOneTastingById = function (data) {
+  console.log('inside api.gettastingbyid and the data is', data)
   return $.ajax({
-    url: config.apiUrl + '/tastings',
+    url: config.apiUrl + '/tastings/' + data.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -143,9 +143,7 @@ module.exports = {
   signOut,
   changePassword,
   onTastingSubmit,
-  onCoffeeSubmit,
   onGetAllCoffees,
-  onGetMyTastings,
-  onShowCoffeeById,
-  onShowTastingById
+  onGetAllTastings,
+  onGetOneTastingById
 }

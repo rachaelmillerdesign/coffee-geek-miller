@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -201,34 +202,20 @@
     </fieldset>
   </form>
 
-  <button class="accordion" id="getMyTastings">VIEW ALL TASTINGS</button>
-    <div id="myTastingsTable" class="panel"></div>
+  <button class="accordion" id="getAllTastings">VIEW ALL TASTINGS</button>
+    <div id="allTastingsTable" class="panel"></div>
 
-    <button class="accordion">EDIT TASTING</button>
-    <form id="editTasting" class="panel">
-      <fieldset>
-        <label for="coffee_id">coffee ID</label>
-        <input type="number" id="edit_coffee_id" name="tasting[coffee_id]">
-        <label for="date">date</label>
-        <input type="date" id="edit_date" name="tasting[date]">
-        <label for="tasting_notes">TASTING NOTES</label>
-        <input type="text" id="edit_notes" name="tasting[tasting_notes]">
-        <label for="grams_in">grams in</label>
-        <input type="number" id="edit_grams_in" name="tasting[grams_in]">
-        <label for="grams_out">grams out</label>
-        <input type="number" id="edit_grams_out" name="tasting[grams_out]">
-        <label for="time">time</label>
-        <input type="text" id="edit_time" name="tasting[time]">
-        <label for="temperature">temperature</label>
-        <input type="number" id="edit_temperature" name="tasting[temperature]">
-        <label for="extraction_notes">extraction notes</label>
-        <input type="text" id="edit_extraction_notes" name="tasting[extraction_notes]">
-        <button class="submit" value="tasting">SAVE EDIT</button>
-      </fieldset>
-    </form>
+  <button class="accordion">GET ONE TASTING</button>
+  <form id="getOneTastingById" class="panel">
+    <fieldset>
+      <input type="text" name="id" placeholder="enter tasting ID">
+      <button class="submit">GET TASTING</button>
+      <div id="singleTastingTable" class="hidden"> </div>
+    </fieldset>
+  </form>
 
   <!-- <button class="accordion" id="editMyTastings">VIEW ONE TASTING</button>
-    <form id="showTastingById" class="panel">
+    <form id="getOneTastingById" class="panel">
       <input type="text" id="id" placeholder="Enter ID" name="tasting[id]">
       <button class="submit" id="singleTasting" value="tasting">SUBMIT</button> -->
           <!-- <label for="output" id="singleTastingTable">single tasting</label> -->

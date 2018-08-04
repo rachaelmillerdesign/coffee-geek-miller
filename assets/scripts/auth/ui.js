@@ -108,26 +108,26 @@ const changePasswordFailure = function (error) {
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
-const addCoffeeSuccess = function () {
-  $('#addCoffeeSuccess').modal({
-    show: true
-  })
-  setTimeout(function () {
-    $('#addCoffeeSuccess').modal('hide')
-  }, 2000)
-  $('#coffee')[0].reset()
-  console.log('addCoffeeSuccess ran and nothing was returned!')
-}
-
-const addCoffeeFailure = function (error) {
-  $('#addCoffeeFailure').modal({
-    show: true
-  })
-  setTimeout(function () {
-    $('#addCoffeeFailure').modal('hide')
-  }, 2000)
-  console.error('addCoffeeFailure ran. Error is :', error)
-}
+// const addCoffeeSuccess = function () {
+//   $('#addCoffeeSuccess').modal({
+//     show: true
+//   })
+//   setTimeout(function () {
+//     $('#addCoffeeSuccess').modal('hide')
+//   }, 2000)
+//   $('#coffee')[0].reset()
+//   console.log('addCoffeeSuccess ran and nothing was returned!')
+// }
+//
+// const addCoffeeFailure = function (error) {
+//   $('#addCoffeeFailure').modal({
+//     show: true
+//   })
+//   setTimeout(function () {
+//     $('#addCoffeeFailure').modal('hide')
+//   }, 2000)
+//   console.error('addCoffeeFailure ran. Error is :', error)
+// }
 
 const addTastingSuccess = function () {
   $('#addTastingSuccess').modal({
@@ -156,27 +156,53 @@ const getAllCoffeesSuccess = function (data) {
   generateCoffeeTableDiv(data)
 }
 
-const getMyTastingsSuccess = function (data) {
-  $('#getMyTastingsSuccess').modal({
+const getAllTastingsSuccess = function (data) {
+  $('#getAllTastingsSuccess').modal({
     show: true
   })
   setTimeout(function () {
-    $('#getMyTastingsSuccess').modal('hide')
+    $('#getAllTastingsSuccess').modal('hide')
   }, 2000)
-  console.log('getMyTastingsSuccess ran and the data is ', data)
-  console.log('In getMyTastingsSuccess and data.tastings is ', data.coffees)
-  generateTastingsTable(data)
+  console.log('getAllTastingsSuccess ran and the data is ', data)
+  console.log('In getAllTastingsSuccess and data.tastings is ', data.coffees)
+  generateAllTastingsTable(data)
 }
 
-const generateTastingDataSuccess = function (data) {
-  event.preventDefault()
-  const tastingData = getFormFields(event.target)
-  const tasting = data.tasting
+// const generateOneTastingByIdTable = function (data) {
+//   const tastingData = $('#data.tasting')
+//   console.log('in ui generate one tasting by id and the data is ', tastingData)
+//   document.getElementById('singleTastingTable').append(tastingData)
+// }
 
+const generateOneTastingByIdTable = function (data) {
+  const table = document.createElement('table')
+  let tableRow = document.createElement('tr')
+  let tableData
+  const fields = ['roaster', 'blend', 'rating', 'fave', 'notes', 'grams_in', 'grams_out', 'time', 'temp', 'extraction_notes']
+  for (let i = 0; i < fields.length; i++) {
+    tableData = document.createElement('th')
+    tableData.innerHTML = fields[i]
+    tableRow.appendChild(tableData)
+  }
+  table.appendChild(tableRow)
+  tableRow = document.createElement('tr')
+  for (let i = 0; i < fields.length; i++) {
+    tableData = document.createElement('td')
+    tableData.innerHTML = data[fields[i]]
+    tableRow.appendChild(tableData)
+  }
+  table.appendChild(tableRow)
+
+  document.getElementById('singleTastingTable').appendChild(table)
+  console.log('adding one tastings by id table', table)
 }
 
+const getOneTastingByIdSuccess = function (data) {
+  console.log('in getOneTastingByIdSuccess')
+  generateOneTastingByIdTable(data)
+  $('#singleTastingTable').removeClass('hidden')
+}
 
-//
 // const generateSingleTastingData = function (data) {
 //   console.log(`at generateTastingData data is ${data}`)
 //   console.log(`data.tasting is ${data.tasting}`)
@@ -190,11 +216,6 @@ const generateTastingDataSuccess = function (data) {
 //   //   document.getElementById('singleTastingTable').append(tastingData)
 //   //   console.log('adding tasting', tastingData)
 //   // }
-// }
-//
-// const getMyTastingByIdSuccess = function (data) {
-//   console.log(data.tasting, 'OK!')
-//   generateSingleTastingData(data)
 // }
 
 let i
@@ -256,7 +277,7 @@ const generateCoffeeTableDiv = function (data) {
   console.log('adding table', table)
 }
 
-const generateTastingsTable = function (data) {
+const generateAllTastingsTable = function (data) {
   const table = document.createElement('table')
   let tableRow = document.createElement('tr')
   let tableData = document.createElement('th')
@@ -323,8 +344,8 @@ const generateTastingsTable = function (data) {
     tableRow.appendChild(tableData)
     table.appendChild(tableRow)
   }
-  document.getElementById('myTastingsTable').appendChild(table)
-  console.log('adding table', table)
+  document.getElementById('allTastingsTable').appendChild(table)
+  console.log('adding all tastings table', table)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -340,13 +361,14 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  addCoffeeFailure,
-  addCoffeeSuccess,
+  // addCoffeeFailure,
+  // addCoffeeSuccess,
   addTastingSuccess,
   addTastingFailure,
   getAllCoffeesSuccess,
   generateCoffeeTableDiv,
-  generateTastingsTable,
-  getMyTastingsSuccess,
-  getMyTastingByIdSuccess
+  generateAllTastingsTable,
+  getAllTastingsSuccess,
+  generateOneTastingByIdTable,
+  getOneTastingByIdSuccess
 }

@@ -28,14 +28,14 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-const onGetMyId = function (event) {
-  event.preventDefault()
-  console.log('get my ID ran!')
-
-  const data = getFormFields(this)
-  // api.signIn('id')
-    .then(ui.getMyId)
-}
+// const onGetMyId = function (event) {
+//   event.preventDefault()
+//   console.log('get my ID ran!')
+//
+//   const data = getFormFields(this)
+//   // api.signIn('id')
+//     .then(ui.getMyId)
+// }
 
 const onSignOut = function (event) {
   event.preventDefault()
@@ -76,14 +76,14 @@ const addTasting = function (event) {
     .catch(ui.addedTastingFailure)
 }
 
-const getOneCoffeeId = function (event) {
-  event.preventDefault()
-  console.log('get my coffee ID ran!')
-
-  const data = getFormFields('id')
-  api.onGetOneCoffeeId(data)
-    .then(ui.getCoffeeId)
-}
+// const getOneCoffeeId = function (event) {
+//   event.preventDefault()
+//   console.log('get my coffee ID ran!')
+//
+//   const data = getFormFields('id')
+//   api.onGetOneCoffeeId(data)
+//     .then(ui.getCoffeeId)
+// }
 
 const getAllCoffees = function (event) {
   event.preventDefault()
@@ -95,22 +95,30 @@ const getAllCoffees = function (event) {
     .catch(ui.getAllCoffeesFailure)
 }
 
-const getMyTastings = function (event) {
+const getAllTastings = function (event) {
   event.preventDefault()
   console.log('got all tastings!')
 
   const data = getFormFields(this)
-  api.onGetMyTastings(data)
-    .then(ui.getMyTastingsSuccess)
-    .catch(ui.getMyTastingsFailure)
+  api.onGetAllTastings(data)
+    .then(ui.getAllTastingsSuccess)
+    .catch(ui.getAllTastingsFailure)
 }
 
-const showTastingById = function (event) {
+const getOneTastingById = function (event) {
   event.preventDefault()
+  console.log('events got one tasting by id')
 
   const data = getFormFields(this)
-  api.onShowTastingById(data)
-    .then(ui.getMyTastingByIdSuccess)
+  // const tasting = data.tasting
+  // if (tasting.id.length !== 0) {
+  api.onGetOneTastingById(data)
+    // booksApi.show(book.id)
+    .then(ui.getOneTastingByIdSuccess)
+    .catch(ui.getOneTastingByIdFailure)
+//   } else {
+//     console.log('Please provide a tasting id!')
+//   }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -125,9 +133,9 @@ const addHandlers = () => {
   $('#coffee').on('submit', addCoffee)
   $('#tasting').on('submit', addTasting)
   $('#getAllCoffees').on('click', getAllCoffees)
-  $('#getMyTastings').on('click', getMyTastings)
-  $('#getOneCoffeeId').on('click', getOneCoffeeId)
-  $('#showTastingById').on('submit', showTastingById)
+  $('#getAllTastings').on('click', getAllTastings)
+  // $('#getOneCoffeeId').on('click', getOneCoffeeId)
+  $('#getOneTastingById').on('submit', getOneTastingById)
 }
 
 module.exports = {
