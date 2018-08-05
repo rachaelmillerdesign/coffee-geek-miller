@@ -110,15 +110,19 @@ const getOneTastingById = function (event) {
   console.log('events got one tasting by id')
 
   const data = getFormFields(this)
-  // const tasting = data.tasting
-  // if (tasting.id.length !== 0) {
   api.onGetOneTastingById(data)
-    // booksApi.show(book.id)
     .then(ui.getOneTastingByIdSuccess)
     .catch(ui.getOneTastingByIdFailure)
-//   } else {
-//     console.log('Please provide a tasting id!')
-//   }
+}
+
+const editTasting = function (event) {
+  event.preventDefault()
+  console.log('updated tasting')
+
+  const data = getFormFields(this)
+  api.onEditTasting(data)
+    .then(ui.editTastingSuccess)
+    .catch(ui.editTastingFailure)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -134,8 +138,8 @@ const addHandlers = () => {
   $('#tasting').on('submit', addTasting)
   $('#getAllCoffees').on('click', getAllCoffees)
   $('#getAllTastings').on('click', getAllTastings)
-  // $('#getOneCoffeeId').on('click', getOneCoffeeId)
   $('#getOneTastingById').on('submit', getOneTastingById)
+  $('#editTasting').on('#submitEdit', editTasting)
 }
 
 module.exports = {

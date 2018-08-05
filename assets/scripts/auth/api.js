@@ -133,6 +133,18 @@ const onGetOneTastingById = function (data) {
   })
 }
 
+const onEditTasting = function (data) {
+  console.log('inside api.editTasting and the data is', data)
+  return $.ajax({
+    url: config.apiUrl + '/tastings/' + data.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -145,5 +157,6 @@ module.exports = {
   onTastingSubmit,
   onGetAllCoffees,
   onGetAllTastings,
-  onGetOneTastingById
+  onGetOneTastingById,
+  onEditTasting
 }
