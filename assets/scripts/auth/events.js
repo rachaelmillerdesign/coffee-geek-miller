@@ -28,6 +28,15 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+// const onGetMyId = function (event) {
+//   event.preventDefault()
+//   console.log('get my ID ran!')
+//
+//   const data = getFormFields(this)
+//   // api.signIn('id')
+//     .then(ui.getMyId)
+// }
+
 const onSignOut = function (event) {
   event.preventDefault()
   console.log('sign out ran')
@@ -56,6 +65,7 @@ const addCoffee = function (event) {
     .then(ui.addCoffeeSuccess)
     .catch(ui.addCoffeeFailure)
 }
+
 const addTasting = function (event) {
   event.preventDefault()
   console.log('tasting recorded!')
@@ -66,14 +76,67 @@ const addTasting = function (event) {
     .catch(ui.addedTastingFailure)
 }
 
-const getMyCoffees = function (event) {
+// const getOneCoffeeId = function (event) {
+//   event.preventDefault()
+//   console.log('get my coffee ID ran!')
+//
+//   const data = getFormFields('id')
+//   api.onGetOneCoffeeId(data)
+//     .then(ui.getCoffeeId)
+// }
+
+const getAllCoffees = function (event) {
   event.preventDefault()
   console.log('got all coffees!')
 
   const data = getFormFields(this)
-  api.onGetMyCoffees(data)
-    .then(ui.getMyCoffeesSuccess)
-    .catch(ui.getMyCoffeesFailure)
+  api.onGetAllCoffees(data)
+    .then(ui.getAllCoffeesSuccess)
+    .catch(ui.getAllCoffeesFailure)
+}
+
+const getAllTastings = function (event) {
+  event.preventDefault()
+  console.log('got all tastings!')
+
+  const data = getFormFields(this)
+  api.onGetAllTastings(data)
+    .then(ui.getAllTastingsSuccess)
+    .catch(ui.getAllTastingsFailure)
+}
+
+const getOneTastingById = function (event) {
+  event.preventDefault()
+  console.log('events got one tasting by id')
+
+  const data = getFormFields(this)
+  api.onGetOneTastingById(data)
+    .then(ui.getOneTastingByIdSuccess)
+    .catch(ui.getOneTastingByIdFailure)
+}
+
+const getOneTastingByIdandEdit = function (event) {
+  event.preventDefault()
+  console.log('events got one tasting by id for edit')
+
+  const data = getFormFields(this)
+  api.onGetOneTastingById(data)
+    .then(ui.getOneTastingByIdForEditSuccess)
+    .catch(ui.getOneTastingByIdForEditFailure)
+}
+
+const editTasting = function (event) {
+  event.preventDefault()
+  console.log('edit tasting button clicked')
+  // $('editTastingButton').addClass('hidden')
+  // $('#getOneTastingByIdandEdit').removeClass('hidden')
+  // $('#submitIdForEdit').removeClass('hidden')
+
+  const data = getFormFields(this)
+  console.log('updated tasting')
+  api.onEditTasting(data)
+    .then(ui.getOneTastingByIdAndEditSuccess)
+    // .catch(ui.editTastingFailure)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +150,12 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#coffee').on('submit', addCoffee)
   $('#tasting').on('submit', addTasting)
-  $('#getMyCoffees').on('click', getMyCoffees)
+  $('#getAllCoffees').on('click', getAllCoffees)
+  $('#getAllTastings').on('click', getAllTastings)
+  $('#getOneTastingById').on('submit', getOneTastingById)
+  $('#getOneTastingByIdandEdit').on('submit', editTasting)
+  // $('#getOneTastingByIdandEdit').on('#editTastingButton', getOneTastingByIdandEdit)
+  // $('#editTastingButton').on('click', editTasting)
 }
 
 module.exports = {

@@ -1,7 +1,9 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  // font-size: 62.5%;
 }
+
 // espresso:	#2B2211
 // coffee: 	#4F3828
 // latte:    #B28C5F
@@ -16,6 +18,9 @@
   display: none;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// MODALS
+// ~~~~~~~~~~~~~~~~~~~~~
 /* The Modal (background) */
 .modal {
   background-color: #e2f984;
@@ -28,6 +33,7 @@
   z-index: 1;
   height: auto;
 }
+
 // .modal-body {
 //   background-color: #e2f984;
 // }
@@ -43,11 +49,14 @@
 
 /* The Close Button */
 .close {
+  border: none;
   outline: none;
   color: #9ece00;
   float: right;
-  font-size: 24px;
+  font-size: 1.4rem;
+  // font-size: 24px;
   font-weight: 300;
+  padding: 4vw;
 }
 
 .close-fail {
@@ -55,8 +64,10 @@
   outline: none;
   color: #f98900;
   float: right;
-  font-size: 24px;
+  // font-size: 24px;
+  font-size: 1.4rem;
   font-weight: 300;
+  padding: 4vw;
 }
 
 .close:hover,
@@ -66,34 +77,61 @@
   cursor: pointer;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// BODY
+// ~~~~~~~~~~~~~~~~~~~~~
 body {
   background-color: #f0e4cd;
+  // max-width: 400px;
+  margin: 0 auto;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// FONTS
+// ~~~~~~~~~~~~~~~~~~~~~
 h3 {
   // color: #382f25;
   text-align: left;
   float: left;
   font-weight: 400;
+  // font-size: 4vw;
+  font-size: 1.2rem;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~
+// STAR RATING
+// ~~~~~~~~~~~~~~~~~~~~~
+.star {
+float: right;
 }
 
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
+  text-align: center;
 }
 
 .rating > span {
   display: inline-block;
-  float: right;
+  position: relative;
   width: 1.1em;
+}
+
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
 }
 
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {
    content: "\2605";
-   float: right;
+   position: absolute;
+   left: 0;
+   color: gold;
 }
-
+// ~~~~~~~~~~~~~~~~~~~~~
+// SIGN IN OUT UP ETC FORMS
+// ~~~~~~~~~~~~~~~~~~~~~
 fieldset {
   display: block;
   -webkit-margin-start: 2px;
@@ -108,15 +146,15 @@ fieldset {
   // border-color: threedface;
   // border-image: initial;
 }
-legend {
-  display: block;
+// legend {
+//   display: block;
     // -webkit-padding-start: 2px;
     // -webkit-padding-end: 2px;
     // border-width: initial;
     // border-style: none;
     // border-color: initial;
     // border-image: initial;
-}
+// }
 
 #notes {
   -webkit-box-sizing: border-box;
@@ -137,41 +175,80 @@ input {
   display: inline-block;
   float: right;
   clear: right;
+  padding: .5vw;
 }
 
 .submit {
   padding: 8px;
   margin: 10px;
   float: right;
+  // font-size: 3vw;
+  font-size: 1rem;
+  border: none;
+  background-color: none;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background-color:#B28C5F;
+  border: none;
+  padding: 1 vw;
+  background-color: none;
 }
+
 .active, .submit:hover {
-    color: white;
-    background-color: #78572e;
+  background-color: #9ece00;
+  border: none;
+  -webkit-appearance: none;
+  background-color: none;
 }
 
-input[type="checkbox"] {
-  zoom: 1.5;
+#fave {
+  background-color: white;
+  border: 1px solid #4F3828;
+  zoom: 2;
 }
 
-.save {
+#myId, #coffeeId {
+  color: #2B2211;
+  background-color: #9ece00;
+  width: 100%;
+  // border: 1px solid #4F3828;
+  text-align: right;
+  font-weight: 500;
+  height: 3vw;
+  font-size: 1.5rem;
+  // padding-bottom: 8vw;
+}
+
+p {
+margin-right: 20px;
+}
+
+#editTastingButton {
   float: right;
+  border: none;
 }
+// .save {
+//   border: none;
+//   background-color: #f98900;
+//   float: right;
+// }
 
+// ~~~~~~~~~~~~~~~~~~~~~
+// ACCORDION AND PANELS
+// ~~~~~~~~~~~~~~~~~~~~~
 .accordion {
-    background-color: #b28c5e;
-    color: #382f25;
-    cursor: pointer;
-    padding: 3vh;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 6vw;
-    transition: 0.4s;
+  background-color: #b28c5e;
+  color: #382f25;
+  cursor: pointer;
+  padding: 3vh;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  // font-size: 6vw;
+  font-size: 1.5rem;
+  transition: 0.4s;
 }
 
 .active, .accordion:hover {
@@ -180,8 +257,47 @@ input[type="checkbox"] {
 }
 
 .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: B28C5F;
-    overflow: hidden;
+  // padding: 0 3vm;
+  display: none;
+  background-color: B28C5F;
+  // overflow: hidden;
 }
+// ~~~~~~~~~~~~~~~~~~~~~
+// TABLES
+// ~~~~~~~~~~~~~~~~~~~~~
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  table-layout: fixed;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-top: 15px;
+}
+
+td,tr {
+  border: 1px solid #F0E4CC;
+  background-color: white;
+  color: #2B2211;
+  font-size: .3rem;
+  font-weight: 500;
+  padding: 1.2vw;
+}
+
+th {
+  color: #2B2211;
+  font-size: .4rem;
+  font-weight: 600;
+  margin: 0 auto;
+  padding: 1.5vw 0 1.5vw 0;
+  word-wrap: break-word;
+  white-space: nowrap;
+  border: 1px solid #4F3828;
+  background-color: #f98900;
+  text-transform: uppercase;
+}
+
+// @media only screen and (max-width: 600px) and (min-width: 400px) {
+//
+// }

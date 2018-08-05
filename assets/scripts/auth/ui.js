@@ -2,68 +2,64 @@
 
 const store = require('../store')
 
-const signUpSuccess = function(data) {
-  // $('#message').text('Signed up successfully')
-  // $('#message').css('background-color', 'green')
+const signUpSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
   $('#signUpSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signUpSuccess').modal('hide')
   }, 2000)
+  $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
 }
 
-const signUpFailure = function(error) {
-  // $('#message').text('Error on sign up')
-  // $('#message').css('background-color', 'red')
+const signUpFailure = function (error) {
   $('#signInFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signUpFailure').modal({
       show: false
     })
   }, 2000)
+  $('#sign-up')[0].reset()
   console.error('signUpFailure ran. Error is :', error)
 }
 
-const signInSuccess = function(data) {
-  // $('#message').text('Signed in successfully')
-  // $('#message').css('background-color', 'green')
-  $('#game-new').removeClass('unclickable')
+const signInSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-in').addClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
+  $('#myId').removeClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
   $('#signInSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signInSuccess').modal('hide')
   }, 2000)
   store.user = data.user
+  console.log(store.user.id)
+  $('#sign-in')[0].reset()
+  // $('#myId').html(`<p>${store.user.id}</p>`)
 }
 
-const signInFailure = function(error) {
-  // $('#message').text('Error on sign in')
-  // $('#message').css('background-color', 'red')
+const signInFailure = function (error) {
   $('#signInFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signInFailure').modal('hide')
   }, 2000)
+  $('#sign-in')[0].reset()
   console.error('signInFailure ran. Error is :', error)
 }
 
-const signOutSuccess = function() {
-  // $('#message').text('Signed out successfully')
-  // $('#message').css('background-color', 'green')
+const signOutSuccess = function () {
   $('#sign-in').removeClass('hidden')
   $('#sign-up').removeClass('hidden')
   $('#sign-out').addClass('hidden')
@@ -71,130 +67,270 @@ const signOutSuccess = function() {
   $('#signOutSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signOutSuccess').modal('hide')
   }, 2000)
+  $('#sign-out')[0].reset()
   // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
 
-const signOutFailure = function(error) {
-  // $('#message').text('Error on sign out')
-  // $('#message').css('background-color', 'red')
+const signOutFailure = function (error) {
   $('#signOutFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signOutFailure').modal('hide')
   }, 2000)
+  $('#sign-out')[0].reset()
   console.error('signOutFailure ran. Error is :', error)
 }
 
-const changePasswordSuccess = function() {
-  // $('#message').text('Changed password successfully')
-  // $('#message').css('background-color', 'green')
+const changePasswordSuccess = function () {
   $('#changePasswordSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#changePasswordSuccess').modal('hide')
   }, 2000)
+  $('#change-password')[0].reset()
   // console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
-const changePasswordFailure = function(error) {
-  // $('#message').text('Error on change password')
-  // $('#message').css('background-color', 'red')
+const changePasswordFailure = function (error) {
   $('#changePasswordFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#changePasswordFailure').modal('hide')
   }, 2000)
+  $('#change-password')[0].reset()
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
-const addCoffeeSuccess = function() {
-  // $('#message').text('added coffee successfully')
-  // $('#message').css('background-color', 'green')
-  $('#addCoffeeSuccess').modal({
-    show: true
-  })
-  setTimeout(function() {
-    $('#addCoffeeSuccess').modal('hide')
-  }, 2000)
-  console.log('addCoffeeSuccess ran and nothing was returned!')
-}
+// const addCoffeeSuccess = function () {
+//   $('#addCoffeeSuccess').modal({
+//     show: true
+//   })
+//   setTimeout(function () {
+//     $('#addCoffeeSuccess').modal('hide')
+//   }, 2000)
+//   $('#coffee')[0].reset()
+//   console.log('addCoffeeSuccess ran and nothing was returned!')
+// }
+//
+// const addCoffeeFailure = function (error) {
+//   $('#addCoffeeFailure').modal({
+//     show: true
+//   })
+//   setTimeout(function () {
+//     $('#addCoffeeFailure').modal('hide')
+//   }, 2000)
+//   console.error('addCoffeeFailure ran. Error is :', error)
+// }
 
-const addCoffeeFailure = function(error) {
-  // $('#message').text('Error on add coffee')
-  // $('#message').css('background-color', 'red')
-  $('#addCoffeeFailure').modal({
-    show: true
-  })
-  setTimeout(function() {
-    $('#addCoffeeFailure').modal('hide')
-  }, 2000)
-  console.error('addCoffeeFailure ran. Error is :', error)
-}
-const addTastingSuccess = function() {
-  // $('#message').text('added tasting successfully')
-  // $('#message').css('background-color', 'green')
+const addTastingSuccess = function () {
   $('#addTastingSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#addTastingSuccess').modal('hide')
   }, 2000)
+  $('#tasting')[0].reset()
   console.log('addTastingSuccess ran and nothing was returned!')
 }
 
-const addTastingFailure = function(error) {
-  // $('#message').text('Error on add tasting')
-  // $('#message').css('background-color', 'red')
+const addTastingFailure = function (error) {
   $('#addTastingFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#addTastingFailure').modal('hide')
   }, 2000)
   console.error('addTastingFailure ran. Error is :', error)
 }
 
-const getMyCoffeesSuccess = function() {
-  // $('#message').text('got coffees successfully')
-  // $('#message').css('background-color', 'green')
-  $('#getMyCoffeesSuccess').modal({
-    show: true
-  })
-  setTimeout(function() {
-    $('#getMyCoffeesSuccess').modal('hide')
-  }, 2000)
-  console.log('getMyCoffeesSuccess ran and nothing was returned!')
-}
-const getMyCoffeesFailure = function() {
-  // $('#message').text('error on get coffees')
-  // $('#message').css('background-color', 'green')
-  $('#getMyCoffeesFailure').modal({
-    show: true
-  })
-  setTimeout(function() {
-    $('#getMyCoffeesFailure').modal('hide')
-  }, 2000)
-  console.log('getMyCoffeesFailure ran and nothing was returned!')
+const getAllCoffeesSuccess = function (data) {
+  console.log('getAllCoffeesSuccess ran and the data is ', data)
+  console.log('In getAllCoffeeSuccess and data.coffees is ', data.coffees)
+  generateCoffeeTableDiv(data)
 }
 
-// $(document).on(modal({show: true})), function (event, modal) {
-//   setTimeout(function () {
-//     $.modal.close()
-//   }, 2000)
-// })
+const getAllTastingsSuccess = function (data) {
+  $('#getAllTastingsSuccess').modal({
+    show: true
+  })
+  setTimeout(function () {
+    $('#getAllTastingsSuccess').modal('hide')
+  }, 2000)
+  console.log('getAllTastingsSuccess ran and the data is ', data)
+  console.log('In getAllTastingsSuccess and data.tastings is ', data.coffees)
+  generateAllTastingsTable(data)
+}
 
-const acc = document.getElementsByClassName('accordion')
+const generateOneTastingByIdTable = function (data) {
+  const table = document.createElement('table')
+  table.id = 'tastingTable'
+  let tableData
+  let inputField
+  console.log('generateOneTastingByIdTable and the data is ', data)
+  const coffeeFields = ['roaster', 'blend', 'rating', 'fave']
+  const fields = ['notes', 'grams_in', 'grams_out', 'time', 'temperature', 'extraction_notes']
+  let tableRow = document.createElement('tr')
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'Property'
+  inputField = document.createElement('input')
+  inputField.type = 'text'
+  inputField.name = 'id'
+  inputField.value = data.tasting.id
+  inputField.setAttribute('type', 'hidden')
+  tableData.appendChild(inputField)
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'Value'
+  tableRow.appendChild(tableData)
+  table.appendChild(tableRow)
+  for (let i = 0; i < coffeeFields.length; i++) {
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
+    tableData.innerHTML = coffeeFields[i]
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    inputField = document.createElement('input')
+    inputField.type = 'text'
+    inputField.name = 'tasting.coffee[' + coffeeFields[i] + ']'
+    inputField.value = data.tasting.coffee[coffeeFields[i]]
+    tableData.appendChild(inputField)
+    tableRow.appendChild(tableData)
+    table.appendChild(tableRow)
+  }
+  for (let i = 0; i < fields.length; i++) {
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
+    tableData.innerHTML = fields[i]
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    inputField = document.createElement('input')
+    inputField.type = 'text'
+    inputField.name = 'tasting[' + fields[i] + ']'
+    inputField.value = data.tasting[fields[i]]
+    tableData.appendChild(inputField)
+    tableRow.appendChild(tableData)
+    table.appendChild(tableRow)
+  }
+  // for (let i = 0; i < fields.length; i++) {
+  //   tableData = document.createElement('td')
+  //   tableData.innerHTML = data.tasting[fields[i]]
+  //   tableRow.appendChild(tableData)
+  // }
+
+  // document.getElementById('singleTastingTable').appendChild(table)
+  document.getElementById('singleTastingTableForEdit').appendChild(table)
+  console.log('adding one tastings by id table', table)
+}
+
+const getOneTastingByIdSuccess = function (data) {
+  console.log('in getOneTastingByIdSuccess')
+  // const myTable = document.getElementById('tastingTable')
+  generateOneTastingByIdTable(data)
+  $('#singleTastingTableForEdit').removeClass('hidden')
+  $('#submitId').addClass('hidden')
+  $('#submitIdForEdit').addClass('hidden')
+  $('#edit').removeClass('hidden')
+  // $('#submitEdit').removeClass('hidden')
+}
+
+// const generateOneTastingByIdAndEditTable = function (data) {
+//   const table = document.createElement('table')
+//   table.id = 'tastingTable'
+//   let tableData
+//   let inputField
+//   console.log('generateOneTastingByIdAndEditTable and the data is ', data)
+//   const coffeeFields = ['roaster', 'blend', 'rating', 'fave']
+//   const fields = ['notes', 'grams_in', 'grams_out', 'time', 'temp', 'extraction_notes']
+//   let tableRow = document.createElement('tr')
+//   tableData = document.createElement('th')
+//   tableData.innerHTML = 'Property'
+//   tableRow.appendChild(tableData)
+//   tableData = document.createElement('th')
+//   tableData.innerHTML = 'Value'
+//   tableRow.appendChild(tableData)
+//   table.appendChild(tableRow)
+//   for (let i = 0; i < coffeeFields.length; i++) {
+//     tableRow = document.createElement('tr')
+//     tableData = document.createElement('td')
+//     tableData.innerHTML = coffeeFields[i]
+//     tableRow.appendChild(tableData)
+//     tableData = document.createElement('td')
+//     inputField = document.createElement('input')
+//     inputField.type = 'text'
+//     inputField.name = 'tasting.coffee[' + coffeeFields[i] + ']'
+//     inputField.placeholder = data.tasting.coffee[coffeeFields[i]]
+//     tableData.appendChild(inputField)
+//     tableRow.appendChild(tableData)
+//     table.appendChild(tableRow)
+//   }
+//   for (let i = 0; i < fields.length; i++) {
+//     tableRow = document.createElement('tr')
+//     tableData = document.createElement('td')
+//     tableData.innerHTML = fields[i]
+//     tableRow.appendChild(tableData)
+//     tableData = document.createElement('td')
+//     inputField = document.createElement('input')
+//     inputField.type = 'text'
+//     inputField.name = 'tasting[' + fields[i] + ']'
+//     inputField.placeholder = data.tasting[fields[i]]
+//     tableData.appendChild(inputField)
+//     tableRow.appendChild(tableData)
+//     table.appendChild(tableRow)
+//   }
+//   // for (let i = 0; i < fields.length; i++) {
+//   //   tableData = document.createElement('td')
+//   //   tableData.innerHTML = data.tasting[fields[i]]
+//   //   tableRow.appendChild(tableData)
+//   // }
+//
+//   document.getElementById('singleTastingTableForEdit').appendChild(table)
+//   console.log('adding one tastings by id for edit table', table)
+// }
+
+// const clickOnSubmitIdForEdit = function (data) {
+//   const myTable = document.getElementById('singleTastingTableForEdit')
+//   if (myTable !== null) {
+//     $('#editTasting'(data))
+//   } else {
+//     generateOneTastingByIdAndEditTable(data)
+//     // $('#singleTastingTableForEdit').removeClass('hidden')
+//     $('#submitIdForEdit').addClass('hidden')
+//     $('#edit').removeClass('hidden')
+//     $('#submitEdit').removeClass('hidden')
+//   }
+// }
+// const getOneTastingByIdAndEditSuccess = function (data) {
+//   console.log('in getOneTastingByIdAndEditSuccess')
+//   const myTable = document.getElementById('singleTastingTableForEdit')
+//   if (myTable !== null) {
+//     $('#editTasting'(data))
+//   } else {
+//     generateOneTastingByIdAndEditTable(data)
+//     $('#singleTastingTable').removeClass('hidden')
+//     $('#submitIdForEdit').addClass('hidden')
+//     $('#edit').removeClass('hidden')
+//     $('#submitEdit').removeClass('hidden')
+//   }
+// }
+
+// const editTastingSuccess = function (data) {
+//   console.log('in editTastingSuccess')
+// }
+
 let i
+const acc = document.getElementsByClassName('accordion')
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener('click', function() {
+  console.log('counter: ', i)
+  acc[i].addEventListener('click', function () {
+    $('table').empty()
     this.classList.toggle('active')
     const panel = this.nextElementSibling
     if (panel.style.display === 'block') {
@@ -205,43 +341,118 @@ for (i = 0; i < acc.length; i++) {
   })
 }
 
-function generateMyCoffeeTable () { // get the reference for the body
-  const body = document.getElementsByTagName('body')[0] // creates a <table> element and a <tbody> element
-  const tbl = document.createElement('table')
-  const tblBody = document.createElement('tbody')// creating all cells
-  for (let i = 0; i < 2; i++) { // creates a table row
-    const row = document.createElement('tr')
-    for (let j = 0; j < 2; j++) { // Create a <td> element and a text node, make the text
-    // node the contents of the <td>, and put the <td> at
-    // the end of the table row
-      const cell = document.createElement('td')
-      const cellText = document.createTextNode('cell in row ' + i + ', column ' + j)
-      cell.appendChild(cellText)
-      row.appendChild(cell)
-    }// add the row to the end of the table body
-    tblBody.appendChild(row)
-  }// put the <tbody> in the <table>
-  tbl.appendChild(tblBody) // appends <table> into <body>
-  body.appendChild(tbl) // sets the border attribute of tbl to 2
-  tbl.setAttribute('border', '2')
+const generateCoffeeTableDiv = function (data) {
+  const table = document.createElement('table')
+  let tableRow = document.createElement('tr')
+  let tableData = document.createElement('th')
+  tableData.innerHTML = 'id'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'roaster'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'blend'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'rating'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'favorite'
+  tableRow.appendChild(tableData)
+  table.appendChild(tableRow)
+  for (let row = 0; row < data.coffees.length; row++) {
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['id']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['roaster']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['blend']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['rating']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.coffees[row]['favorite']
+    tableRow.appendChild(tableData)
+    table.appendChild(tableRow)
+  }
+  document.getElementById('myCoffeesTable').appendChild(table)
+  console.log('adding table', table)
 }
-// let x
-//
-// for (x = 0; x < Coffee.length; i++) {
-//   if (data.Coffee[x].user.id === store.user.id) {
-//     console.log('user confirmed')
-//     $('#content').append(`
-//       <table>
-//           <tr>
-//             <td>${string.coffee[x].roaster}</td>
-//             <td>${data.coffee[x].blend}</td>
-//             <td>${data.coffee[x].favorite}</td>
-//             <td class='ratingData'>${data.coffee[x].rating}</td>
-//           </tr>
-//       </table>
-//     `)
-//   }
-// }
+
+const generateAllTastingsTable = function (data) {
+  const table = document.createElement('table')
+  let tableRow = document.createElement('tr')
+  let tableData = document.createElement('th')
+  tableData.innerHTML = 'roaster'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'blend'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'rating'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'fave'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'notes'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'grams_in'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'grams_out'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'time'
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'temp'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'extraction_notes'
+  tableRow.appendChild(tableData)
+  table.appendChild(tableRow)
+  for (let row = 0; row < data.tastings.length; row++) {
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['roaster']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['blend']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['rating']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['favorite']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['tasting_notes']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['grams_in']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['grams_out']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['time']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['temperature']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['extraction_notes']
+    tableRow.appendChild(tableData)
+    table.appendChild(tableRow)
+  }
+  document.getElementById('allTastingsTable').appendChild(table)
+  console.log('adding all tastings table', table)
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~
 // MODULE EXPORTS
@@ -256,12 +467,17 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  acc,
-  addCoffeeFailure,
-  addCoffeeSuccess,
+  // addCoffeeFailure,
+  // addCoffeeSuccess,
   addTastingSuccess,
   addTastingFailure,
-  getMyCoffeesSuccess,
-  getMyCoffeesFailure,
-  generateMyCoffeeTable
+  getAllCoffeesSuccess,
+  generateCoffeeTableDiv,
+  generateAllTastingsTable,
+  getAllTastingsSuccess,
+  generateOneTastingByIdTable,
+  // generateOneTastingByIdAndEditTable,
+  getOneTastingByIdSuccess
+  // clickOnSubmitIdForEdit
+  // editTastingSuccess
 }

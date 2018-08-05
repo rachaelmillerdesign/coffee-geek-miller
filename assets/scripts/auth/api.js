@@ -44,6 +44,7 @@ const changePassword = function (data) {
     data
   })
 }
+
 const onTastingSubmit = function (data) {
   return $.ajax({
     url: config.apiUrl + '/tastings',
@@ -55,11 +56,64 @@ const onTastingSubmit = function (data) {
   })
 }
 
-const onCoffeeSubmit = function (data) {
-  console.log(data, store)
+// const onCoffeeSubmit = function (data) {
+//   console.log(data, store)
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+
+// const onGetOneCoffeeId = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+
+const onGetAllCoffees = function (data) {
   return $.ajax({
     url: config.apiUrl + '/coffees',
-    method: 'POST',
+    method: 'GET',
+    data
+  })
+}
+
+// const onGetMyCoffees = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+
+// const onShowCoffeeById = function (data) {
+//   console.log(data)
+//   return $.ajax({
+//     url: config.apiUrl + '/coffees/' + data.coffee.id,
+//     method: 'GET',
+//     // headers: {
+//     //   Authorization: 'Token token=' + store.user.token
+//     // },
+//     data
+//   })
+// }
+
+const onGetAllTastings = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/tastings',
+    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -67,10 +121,35 @@ const onCoffeeSubmit = function (data) {
   })
 }
 
-const onGetMyCoffees = function (data) {
+const onGetOneTastingById = function (data) {
+  console.log('inside api.gettastingbyid and the data is', data)
   return $.ajax({
-    url: config.apiUrl + '/coffees',
+    url: config.apiUrl + '/tastings/' + data.id,
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onGetOneTastingByIdforEdit = function (data) {
+  console.log('inside api.gettastingbyidforedit and the data is', data)
+  return $.ajax({
+    url: config.apiUrl + '/tastings/' + data.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const onEditTasting = function (data) {
+  console.log('inside api.editTasting and the data is', data)
+  return $.ajax({
+    url: config.apiUrl + 'tastings/' + data.id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -88,6 +167,9 @@ module.exports = {
   signOut,
   changePassword,
   onTastingSubmit,
-  onCoffeeSubmit,
-  onGetMyCoffees
+  onGetAllCoffees,
+  onGetAllTastings,
+  onGetOneTastingById,
+  onEditTasting,
+  onGetOneTastingByIdforEdit
 }
