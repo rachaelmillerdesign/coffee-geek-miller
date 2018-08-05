@@ -115,14 +115,28 @@ const getOneTastingById = function (event) {
     .catch(ui.getOneTastingByIdFailure)
 }
 
-const editTasting = function (event) {
+const getOneTastingByIdandEdit = function (event) {
   event.preventDefault()
-  console.log('updated tasting')
+  console.log('events got one tasting by id for edit')
 
   const data = getFormFields(this)
+  api.onGetOneTastingById(data)
+    .then(ui.getOneTastingByIdForEditSuccess)
+    .catch(ui.getOneTastingByIdForEditFailure)
+}
+
+const editTasting = function (event) {
+  event.preventDefault()
+  console.log('edit tasting button clicked')
+  // $('editTastingButton').addClass('hidden')
+  // $('#getOneTastingByIdandEdit').removeClass('hidden')
+  // $('#submitIdForEdit').removeClass('hidden')
+
+  const data = getFormFields(this)
+  console.log('updated tasting')
   api.onEditTasting(data)
-    .then(ui.editTastingSuccess)
-    .catch(ui.editTastingFailure)
+    .then(ui.getOneTastingByIdAndEditSuccess)
+    // .catch(ui.editTastingFailure)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -139,7 +153,9 @@ const addHandlers = () => {
   $('#getAllCoffees').on('click', getAllCoffees)
   $('#getAllTastings').on('click', getAllTastings)
   $('#getOneTastingById').on('submit', getOneTastingById)
-  $('#editTasting').on('#submitEdit', editTasting)
+  $('#getOneTastingByIdandEdit').on('submit', editTasting)
+  // $('#getOneTastingByIdandEdit').on('#editTastingButton', getOneTastingByIdandEdit)
+  // $('#editTastingButton').on('click', editTasting)
 }
 
 module.exports = {
