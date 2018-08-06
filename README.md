@@ -26,6 +26,8 @@ This project has required me to build my first back end app, with a front end to
 
 Here is a diagram of the ERD:
 
+![ERD](/images_for_readme/Screen Shot 2018-07-26 at 5.39.42 AM.png)
+
 Technologies used include:
 
 **HTML5, CSS3, Javascript, JQuery, Ruby, Rails, JSON, SQL, Curl, API,**
