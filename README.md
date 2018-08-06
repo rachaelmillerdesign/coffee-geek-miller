@@ -25,7 +25,7 @@ This project has required me to build my first back end app, with a front end to
 - Created user stories and wireframes as part of planning the app prior to coding.
 
 Here is a diagram of the ERD:
-![Entity Relationship Diagram](assets/images/Screen Shot 2018-07-26 at 5.39.42 AM.png)
+https://user-images.githubusercontent.com/39502188/43717234-df5a83d8-9954-11e8-979b-ceca6a4d0898.png
 
 Technologies used include:
 
