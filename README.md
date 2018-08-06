@@ -10,9 +10,9 @@ This GitHub page is the front end of the application.  The back end can be found
 
 The deployed sites can be found here:
 
-back end:
+back end: https://quiet-fjord-54164.herokuapp.com/
 
-front end:
+front end: https://rachaelmillerdesign.github.io/coffee-geek-miller
 
 This project has required me to build my first back end app, with a front end to match.  In doing so I have:
 
