@@ -25,7 +25,6 @@ This project has required me to build my first back end app, with a front end to
 - Created user stories and wireframes as part of planning the app prior to coding.
 
 Here is a diagram of the ERD:
-![alt text](https://www.dropbox.com/s/kmvcgs5fhgvfl6a/Screen%20Shot%202018-07-26%20at%205.39.42%20AM.png?dl=0)
 
 Technologies used include:
 
