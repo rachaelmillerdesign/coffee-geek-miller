@@ -108,26 +108,26 @@ const changePasswordFailure = function (error) {
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
-// const addCoffeeSuccess = function () {
-//   $('#addCoffeeSuccess').modal({
-//     show: true
-//   })
-//   setTimeout(function () {
-//     $('#addCoffeeSuccess').modal('hide')
-//   }, 2000)
-//   $('#coffee')[0].reset()
-//   console.log('addCoffeeSuccess ran and nothing was returned!')
-// }
-//
-// const addCoffeeFailure = function (error) {
-//   $('#addCoffeeFailure').modal({
-//     show: true
-//   })
-//   setTimeout(function () {
-//     $('#addCoffeeFailure').modal('hide')
-//   }, 2000)
-//   console.error('addCoffeeFailure ran. Error is :', error)
-// }
+const addCoffeeSuccess = function () {
+  $('#addCoffeeSuccess').modal({
+    show: true
+  })
+  setTimeout(function () {
+    $('#addCoffeeSuccess').modal('hide')
+  }, 2000)
+  $('#coffee')[0].reset()
+  console.log('addCoffeeSuccess ran and nothing was returned!')
+}
+
+const addCoffeeFailure = function (error) {
+  $('#addCoffeeFailure').modal({
+    show: true
+  })
+  setTimeout(function () {
+    $('#addCoffeeFailure').modal('hide')
+  }, 2000)
+  console.error('addCoffeeFailure ran. Error is :', error)
+}
 
 const addTastingSuccess = function () {
   $('#addTastingSuccess').modal({
@@ -467,8 +467,8 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  // addCoffeeFailure,
-  // addCoffeeSuccess,
+  addCoffeeFailure,
+  addCoffeeSuccess,
   addTastingSuccess,
   addTastingFailure,
   getAllCoffeesSuccess,
