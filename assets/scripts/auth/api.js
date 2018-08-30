@@ -56,17 +56,17 @@ const onTastingSubmit = function (data) {
   })
 }
 
-// const onCoffeeSubmit = function (data) {
-//   console.log(data, store)
-//   return $.ajax({
-//     url: config.apiUrl + '/coffees',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const onCoffeeSubmit = function (data) {
+  console.log(data, store)
+  return $.ajax({
+    url: config.apiUrl + '/coffees',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 // const onGetOneCoffeeId = function (data) {
 //   return $.ajax({
@@ -167,6 +167,7 @@ module.exports = {
   signOut,
   changePassword,
   onTastingSubmit,
+  onCoffeeSubmit,
   onGetAllCoffees,
   onGetAllTastings,
   onGetOneTastingById,
