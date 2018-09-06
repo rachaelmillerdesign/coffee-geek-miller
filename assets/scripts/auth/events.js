@@ -151,6 +151,7 @@ const addHandlers = () => {
   $('#coffee').on('submit', addCoffee)
   $('#tasting').on('submit', addTasting)
   $('#getAllCoffees').on('click', getAllCoffees)
+  $('#getAllCoffees').on('click', ui.selectCoffeeForTasting)
   $('#getAllTastings').on('click', getAllTastings)
   $('#getOneTastingById').on('submit', getOneTastingById)
   $('#getOneTastingByIdandEdit').on('submit', editTasting)
