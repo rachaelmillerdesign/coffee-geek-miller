@@ -34,7 +34,7 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  console.log('data is ', data)
+  // console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -57,7 +57,7 @@ const onTastingSubmit = function (data) {
 }
 
 const onCoffeeSubmit = function (data) {
-  console.log(data, store)
+//  console.log(data, store)
   return $.ajax({
     url: config.apiUrl + '/coffees',
     method: 'POST',
@@ -122,7 +122,7 @@ const onGetAllTastings = function (data) {
 }
 
 const onGetOneTastingById = function (data) {
-  console.log('inside api.gettastingbyid and the data is', data)
+//  console.log('inside api.gettastingbyid and the data is', data)
   return $.ajax({
     url: config.apiUrl + '/tastings/' + data.id,
     method: 'GET',
@@ -134,7 +134,7 @@ const onGetOneTastingById = function (data) {
 }
 
 const onGetOneTastingByIdforEdit = function (data) {
-  console.log('inside api.gettastingbyidforedit and the data is', data)
+//  console.log('inside api.gettastingbyidforedit and the data is', data)
   return $.ajax({
     url: config.apiUrl + '/tastings/' + data.id,
     method: 'GET',
@@ -146,7 +146,7 @@ const onGetOneTastingByIdforEdit = function (data) {
 }
 
 const onEditTasting = function (data) {
-  console.log('inside api.editTasting and the data is', data)
+//  console.log('inside api.editTasting and the data is', data)
   return $.ajax({
     url: config.apiUrl + 'tastings/' + data.id,
     method: 'PATCH',

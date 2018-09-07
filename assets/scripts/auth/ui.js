@@ -2,25 +2,25 @@
 
 const store = require('../store')
 
-const signUpSuccess = function(data) {
+const signUpSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
   $('#signUpSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signUpSuccess').modal('hide')
   }, 2000)
   $('#sign-up')[0].reset()
-  console.log('signUpSuccess ran. Data is :', data)
+  // console.log('signUpSuccess ran. Data is :', data)
 }
 
-const signUpFailure = function(error) {
+const signUpFailure = function (error) {
   $('#signInFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signUpFailure').modal({
       show: false
     })
@@ -29,37 +29,37 @@ const signUpFailure = function(error) {
   console.error('signUpFailure ran. Error is :', error)
 }
 
-const signInSuccess = function(data) {
+const signInSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-in').addClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#change-password').removeClass('hidden')
   $('#myId').removeClass('hidden')
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   $('#signInSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signInSuccess').modal('hide')
   }, 2000)
   store.user = data.user
-  console.log(store.user.id)
+  // console.log(store.user.id)
   $('#sign-in')[0].reset()
   // $('#myId').html(`<p>${store.user.id}</p>`)
 }
 
-const signInFailure = function(error) {
+const signInFailure = function (error) {
   $('#signInFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signInFailure').modal('hide')
   }, 2000)
   $('#sign-in')[0].reset()
   console.error('signInFailure ran. Error is :', error)
 }
 
-const signOutSuccess = function() {
+const signOutSuccess = function () {
   $('#sign-in').removeClass('hidden')
   $('#sign-up').removeClass('hidden')
   $('#sign-out').addClass('hidden')
@@ -67,7 +67,7 @@ const signOutSuccess = function() {
   $('#signOutSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signOutSuccess').modal('hide')
   }, 2000)
   $('#sign-out')[0].reset()
@@ -75,40 +75,40 @@ const signOutSuccess = function() {
   store.user = null
 }
 
-const signOutFailure = function(error) {
+const signOutFailure = function (error) {
   $('#signOutFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#signOutFailure').modal('hide')
   }, 2000)
   $('#sign-out')[0].reset()
   console.error('signOutFailure ran. Error is :', error)
 }
 
-const changePasswordSuccess = function() {
+const changePasswordSuccess = function () {
   $('#changePasswordSuccess').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#changePasswordSuccess').modal('hide')
   }, 2000)
   $('#change-password')[0].reset()
   // console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
-const changePasswordFailure = function(error) {
+const changePasswordFailure = function (error) {
   $('#changePasswordFailure').modal({
     show: true
   })
-  setTimeout(function() {
+  setTimeout(function () {
     $('#changePasswordFailure').modal('hide')
   }, 2000)
   $('#change-password')[0].reset()
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
-const addCoffeeSuccess = function() {
+const addCoffeeSuccess = function () {
   $('#addCoffeeSuccess').modal({
     show: true
   })
@@ -116,7 +116,7 @@ const addCoffeeSuccess = function() {
     $('#addCoffeeSuccess').modal('hide')
   }, 2000)
   $('#coffee')[0].reset()
-  console.log('addCoffeeSuccess ran and nothing was returned!')
+  // console.log('addCoffeeSuccess ran and nothing was returned!')
 }
 
 const addCoffeeFailure = function(error) {
@@ -137,7 +137,7 @@ const addTastingSuccess = function() {
     $('#addTastingSuccess').modal('hide')
   }, 2000)
   $('#tasting')[0].reset()
-  console.log('addTastingSuccess ran and nothing was returned!')
+  // console.log('addTastingSuccess ran and nothing was returned!')
 }
 
 const addTastingFailure = function(error) {
@@ -151,8 +151,8 @@ const addTastingFailure = function(error) {
 }
 
 const getAllCoffeesSuccess = function(data) {
-  console.log('getAllCoffeesSuccess ran and the data is ', data)
-  console.log('In getAllCoffeeSuccess and data.coffees is ', data.coffees)
+  // console.log('getAllCoffeesSuccess ran and the data is ', data)
+  // console.log('In getAllCoffeeSuccess and data.coffees is ', data.coffees)
   generateCoffeeTableDiv(data)
 }
 
@@ -163,8 +163,8 @@ const getAllTastingsSuccess = function(data) {
   setTimeout(function() {
     $('#getAllTastingsSuccess').modal('hide')
   }, 2000)
-  console.log('getAllTastingsSuccess ran and the data is ', data)
-  console.log('In getAllTastingsSuccess and data.tastings is ', data.coffees)
+  // console.log('getAllTastingsSuccess ran and the data is ', data)
+  // console.log('In getAllTastingsSuccess and data.tastings is ', data.coffees)
   generateAllTastingsTable(data)
 }
 
@@ -173,7 +173,7 @@ const generateOneTastingByIdTable = function(data) {
   table.id = 'tastingTable'
   let tableData
   let inputField
-  console.log('generateOneTastingByIdTable and the data is ', data)
+  // console.log('generateOneTastingByIdTable and the data is ', data)
   const coffeeFields = ['roaster', 'blend', 'rating', 'fave']
   const fields = ['notes', 'grams_in', 'grams_out', 'time', 'temperature', 'extraction_notes']
   let tableRow = document.createElement('tr')
@@ -226,11 +226,11 @@ const generateOneTastingByIdTable = function(data) {
 
   // document.getElementById('singleTastingTable').appendChild(table)
   document.getElementById('singleTastingTableForEdit').appendChild(table)
-  console.log('adding one tastings by id table', table)
+  // console.log('adding one tastings by id table', table)
 }
 
 const getOneTastingByIdSuccess = function(data) {
-  console.log('in getOneTastingByIdSuccess')
+  // console.log('in getOneTastingByIdSuccess')
   // const myTable = document.getElementById('tastingTable')
   generateOneTastingByIdTable(data)
   $('#singleTastingTableForEdit').removeClass('hidden')
@@ -328,7 +328,7 @@ let i
 const acc = document.getElementsByClassName('accordion')
 
 for (i = 0; i < acc.length; i++) {
-  console.log('counter: ', i)
+  // console.log('counter: ', i)
   acc[i].addEventListener('click', function () {
     $('table').empty()
     this.classList.toggle('active')
@@ -345,7 +345,7 @@ const coffee = document.getElementById('panel.myCoffeesTable')
 
 function selectCoffeeForTasting () {
   coffee.onclick = function (event) {
-    console.log('coffee clicked')
+    // console.log('coffee clicked')
     event = event || window.event // IE8
     let target = event.target || event.srcElement
     while (target && target.nodeName !== 'tr') { // find TR
@@ -357,7 +357,7 @@ function selectCoffeeForTasting () {
     }
     const id = document.getElementById('id')
     id.value = cells[0].innerHTML
-    console.log(target.nodeName, event)
+    // console.log(target.nodeName, event)
   }
 }
 
@@ -400,7 +400,7 @@ const generateCoffeeTableDiv = function (data) {
     table.appendChild(tableRow)
   }
   document.getElementById('myCoffeesTable').appendChild(table)
-  console.log('adding table', table)
+  // console.log('adding table', table)
 }
 
 const generateAllTastingsTable = function(data) {
@@ -471,7 +471,7 @@ const generateAllTastingsTable = function(data) {
     table.appendChild(tableRow)
   }
   document.getElementById('allTastingsTable').appendChild(table)
-  console.log('adding all tastings table', table)
+  // console.log('adding all tastings table', table)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~

@@ -10,7 +10,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up ran!')
+//  console.log('sign up ran!')
 
   const data = getFormFields(this)
   api.signUp(data)
@@ -20,7 +20,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran!')
+//  console.log('sign in ran!')
 
   const data = getFormFields(this)
   api.signIn(data)
@@ -39,7 +39,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
+  //  console.log('sign out ran')
 
   api.signOut()
     .then(ui.signOutSuccess)
@@ -48,7 +48,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
 
   const data = getFormFields(this)
   api.changePassword(data)
@@ -58,7 +58,7 @@ const onChangePassword = function (event) {
 
 const addCoffee = function (event) {
   event.preventDefault()
-  console.log('coffee recorded!')
+  // console.log('coffee recorded!')
 
   const data = getFormFields(this)
   api.onCoffeeSubmit(data)
@@ -68,7 +68,7 @@ const addCoffee = function (event) {
 
 const addTasting = function (event) {
   event.preventDefault()
-  console.log('tasting recorded!')
+  // console.log('tasting recorded!')
 
   const data = getFormFields(this)
   api.onTastingSubmit(data)
@@ -87,7 +87,7 @@ const addTasting = function (event) {
 
 const getAllCoffees = function (event) {
   event.preventDefault()
-  console.log('got all coffees!')
+  // console.log('got all coffees!')
 
   const data = getFormFields(this)
   api.onGetAllCoffees(data)
@@ -97,7 +97,7 @@ const getAllCoffees = function (event) {
 
 const getAllTastings = function (event) {
   event.preventDefault()
-  console.log('got all tastings!')
+  // console.log('got all tastings!')
 
   const data = getFormFields(this)
   api.onGetAllTastings(data)
@@ -107,7 +107,7 @@ const getAllTastings = function (event) {
 
 const getOneTastingById = function (event) {
   event.preventDefault()
-  console.log('events got one tasting by id')
+  // console.log('events got one tasting by id')
 
   const data = getFormFields(this)
   api.onGetOneTastingById(data)
@@ -117,7 +117,7 @@ const getOneTastingById = function (event) {
 
 const getOneTastingByIdandEdit = function (event) {
   event.preventDefault()
-  console.log('events got one tasting by id for edit')
+  // console.log('events got one tasting by id for edit')
 
   const data = getFormFields(this)
   api.onGetOneTastingById(data)
@@ -127,13 +127,13 @@ const getOneTastingByIdandEdit = function (event) {
 
 const editTasting = function (event) {
   event.preventDefault()
-  console.log('edit tasting button clicked')
+  // console.log('edit tasting button clicked')
   // $('editTastingButton').addClass('hidden')
   // $('#getOneTastingByIdandEdit').removeClass('hidden')
   // $('#submitIdForEdit').removeClass('hidden')
 
   const data = getFormFields(this)
-  console.log('updated tasting')
+  // console.log('updated tasting')
   api.onEditTasting(data)
     .then(ui.getOneTastingByIdAndEditSuccess)
     // .catch(ui.editTastingFailure)
