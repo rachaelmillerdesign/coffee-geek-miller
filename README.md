@@ -25,16 +25,23 @@ This project has required me to build my first back end app, with a front end to
 - Created user stories and wireframes as part of planning the app prior to coding.
 
 Here is a diagram of the ERD:
-https://user-images.githubusercontent.com/39502188/45237342-61385180-b2ac-11e8-8f52-0a3dc9cc8be9.png
+![Imgur](https://i.imgur.com/oqTd3D1.png)
 
 Technologies used include:
 
 **HTML5, CSS3, Javascript, JQuery, Ruby, Rails, JSON, SQL, Curl, API,**
 
-https://user-images.githubusercontent.com/39502188/45237342-61385180-b2ac-11e8-8f52-0a3dc9cc8be9.png
-https://user-images.githubusercontent.com/39502188/45237341-61385180-b2ac-11e8-852d-17b83548318b.jpg
-https://user-images.githubusercontent.com/39502188/45237340-61385180-b2ac-11e8-8c9d-46092b627f50.jpg
-https://user-images.githubusercontent.com/39502188/45237339-61385180-b2ac-11e8-93fe-bf1edc45b499.jpg
+Wireframes:
+![Imgur](https://i.imgur.com/1NNyAFJ.png)
+
+User Stories:
+![Imgur](https://i.imgur.com/GQLURGM.jpg)
+
+Inspiration for future features:
+
+![Imgur](https://i.imgur.com/T68dlcC.jpg)
+[Imgur](https://i.imgur.com/pIXchuK.jpg)
+
 <u>Possibilities for future refinement and development include:</u>
 
 - ratings score card / visualizer
