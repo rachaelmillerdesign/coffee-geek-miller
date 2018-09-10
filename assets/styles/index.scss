@@ -193,6 +193,11 @@ input[type='submit'] {
   border: none;
   padding: 1 vw;
   background-color: none;
+  outline: none;
+}
+
+input[type='submit'].focus {
+    outline: none;
 }
 
 .active, .submit:hover {
