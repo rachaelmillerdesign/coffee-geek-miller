@@ -341,7 +341,7 @@ for (i = 0; i < acc.length; i++) {
   })
 }
 
-const coffee = document.getElementById('panel.myCoffeesTable')
+// const coffee = document.getElementsByClassName('coffee')
 
 function selectCoffeeForTasting () {
   coffee.onclick = function (event) {
@@ -356,6 +356,9 @@ function selectCoffeeForTasting () {
       return
     }
     const id = document.getElementById('id')
+    for (let c = 0; c < tr.length; c++){
+      var cell = row.insertCell(-1)
+      // cell.setAttribute(class: 'coffee';)
     id.value = cells[0].innerHTML
     // console.log(target.nodeName, event)
   }
