@@ -342,27 +342,28 @@ for (i = 0; i < acc.length; i++) {
 }
 
 // const coffee = document.getElementsByClassName('coffee')
-
-function selectCoffeeForTasting () {
-  coffee.onclick = function (event) {
-    // console.log('coffee clicked')
-    event = event || window.event // IE8
-    let target = event.target || event.srcElement
-    while (target && target.nodeName !== 'tr') { // find TR
-      target = target.parentElement
-    }
-    const cells = target.cells
-    if (!cells.length || target.parentNode.nodeName === 'th') {
-      return
-    }
-    const id = document.getElementById('id')
-    for (let c = 0; c < tr.length; c++){
-      var cell = row.insertCell(-1)
-      // cell.setAttribute(class: 'coffee';)
-    id.value = cells[0].innerHTML
-    // console.log(target.nodeName, event)
-  }
-}
+//
+// function selectCoffeeForTasting () {
+//   coffee.onclick = function (event) {
+//     // console.log('coffee clicked')
+//     event = event || window.event // IE8
+//     let target = event.target || event.srcElement
+//     while (target && target.nodeName !== 'tr') { // find TR
+//       target = target.parentElement
+//     }
+//     const cells = target.cells
+//     if (!cells.length || target.parentNode.nodeName === 'th') {
+//       return
+//     }
+//     const id = document.getElementById('id')
+//     for (let c = 0; c < tr.length; c++) {
+//       const cell = row.insertCell(-1)
+//       // cell.setAttribute(class: 'coffee';)
+//       id.value = cells[0].innerHTML
+//     // console.log(target.nodeName, event)
+//     }
+//   }
+// }
 
 const generateCoffeeTableDiv = function (data) {
   const table = document.createElement('table')
@@ -500,8 +501,8 @@ module.exports = {
   getAllTastingsSuccess,
   generateOneTastingByIdTable,
   // generateOneTastingByIdAndEditTable,
-  getOneTastingByIdSuccess,
-  selectCoffeeForTasting
+  getOneTastingByIdSuccess
+  // selectCoffeeForTasting
   // clickOnSubmitIdForEdit
   // editTastingSuccess
 }
