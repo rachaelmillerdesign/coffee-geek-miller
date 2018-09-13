@@ -127,10 +127,10 @@ const getOneTastingByIdandEdit = function (event) {
 
 const editTasting = function (event) {
   event.preventDefault()
-  // console.log('edit tasting button clicked')
+  console.log('edit tasting button clicked')
   // $('editTastingButton').addClass('hidden')
-  // $('#getOneTastingByIdandEdit').removeClass('hidden')
-  // $('#submitIdForEdit').removeClass('hidden')
+  $('#getOneTastingByIdandEdit').removeClass('hidden')
+  $('#submitIdForEdit').removeClass('hidden')
 
   const data = getFormFields(this)
   // console.log('updated tasting')
@@ -155,8 +155,8 @@ const addHandlers = () => {
   $('#getAllTastings').on('click', getAllTastings)
   $('#getOneTastingById').on('submit', getOneTastingById)
   $('#getOneTastingByIdandEdit').on('submit', editTasting)
-  // $('#getOneTastingByIdandEdit').on('#editTastingButton', getOneTastingByIdandEdit)
-  // $('#editTastingButton').on('click', editTasting)
+  $('#getOneTastingByIdandEdit').on('#editTastingButton', getOneTastingByIdandEdit)
+  $('.editTastingButton').on('click', editTasting)
 }
 
 module.exports = {

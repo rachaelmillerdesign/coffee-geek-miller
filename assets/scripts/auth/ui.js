@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const events = require('./events')
 
 const signUpSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
@@ -240,89 +241,89 @@ const getOneTastingByIdSuccess = function (data) {
   // $('#submitEdit').removeClass('hidden')
 }
 
-// const generateOneTastingByIdAndEditTable = function (data) {
-//   const table = document.createElement('table')
-//   table.id = 'tastingTable'
-//   let tableData
-//   let inputField
-//   console.log('generateOneTastingByIdAndEditTable and the data is ', data)
-//   const coffeeFields = ['roaster', 'blend', 'rating', 'fave']
-//   const fields = ['notes', 'grams_in', 'grams_out', 'time', 'temp', 'extraction_notes']
-//   let tableRow = document.createElement('tr')
-//   tableData = document.createElement('th')
-//   tableData.innerHTML = 'Property'
-//   tableRow.appendChild(tableData)
-//   tableData = document.createElement('th')
-//   tableData.innerHTML = 'Value'
-//   tableRow.appendChild(tableData)
-//   table.appendChild(tableRow)
-//   for (let i = 0; i < coffeeFields.length; i++) {
-//     tableRow = document.createElement('tr')
-//     tableData = document.createElement('td')
-//     tableData.innerHTML = coffeeFields[i]
-//     tableRow.appendChild(tableData)
-//     tableData = document.createElement('td')
-//     inputField = document.createElement('input')
-//     inputField.type = 'text'
-//     inputField.name = 'tasting.coffee[' + coffeeFields[i] + ']'
-//     inputField.placeholder = data.tasting.coffee[coffeeFields[i]]
-//     tableData.appendChild(inputField)
-//     tableRow.appendChild(tableData)
-//     table.appendChild(tableRow)
-//   }
-//   for (let i = 0; i < fields.length; i++) {
-//     tableRow = document.createElement('tr')
-//     tableData = document.createElement('td')
-//     tableData.innerHTML = fields[i]
-//     tableRow.appendChild(tableData)
-//     tableData = document.createElement('td')
-//     inputField = document.createElement('input')
-//     inputField.type = 'text'
-//     inputField.name = 'tasting[' + fields[i] + ']'
-//     inputField.placeholder = data.tasting[fields[i]]
-//     tableData.appendChild(inputField)
-//     tableRow.appendChild(tableData)
-//     table.appendChild(tableRow)
-//   }
-//   // for (let i = 0; i < fields.length; i++) {
-//   //   tableData = document.createElement('td')
-//   //   tableData.innerHTML = data.tasting[fields[i]]
-//   //   tableRow.appendChild(tableData)
-//   // }
-//
-//   document.getElementById('singleTastingTableForEdit').appendChild(table)
-//   console.log('adding one tastings by id for edit table', table)
-// }
+const generateOneTastingByIdAndEditTable = function (data) {
+  const table = document.createElement('table')
+  table.id = 'tastingTable'
+  let tableData
+  let inputField
+  console.log('generateOneTastingByIdAndEditTable and the data is ', data)
+  const coffeeFields = ['roaster', 'blend', 'rating', 'fave']
+  const fields = ['notes', 'grams_in', 'grams_out', 'time', 'temp', 'extraction_notes']
+  let tableRow = document.createElement('tr')
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'Property'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = 'Value'
+  tableRow.appendChild(tableData)
+  table.appendChild(tableRow)
+  for (let i = 0; i < coffeeFields.length; i++) {
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
+    tableData.innerHTML = coffeeFields[i]
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    inputField = document.createElement('input')
+    inputField.type = 'text'
+    inputField.name = 'tasting.coffee[' + coffeeFields[i] + ']'
+    inputField.placeholder = data.tasting.coffee[coffeeFields[i]]
+    tableData.appendChild(inputField)
+    tableRow.appendChild(tableData)
+    table.appendChild(tableRow)
+  }
+  for (let i = 0; i < fields.length; i++) {
+    tableRow = document.createElement('tr')
+    tableData = document.createElement('td')
+    tableData.innerHTML = fields[i]
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
+    inputField = document.createElement('input')
+    inputField.type = 'text'
+    inputField.name = 'tasting[' + fields[i] + ']'
+    inputField.placeholder = data.tasting[fields[i]]
+    tableData.appendChild(inputField)
+    tableRow.appendChild(tableData)
+    table.appendChild(tableRow)
+  }
+  // for (let i = 0; i < fields.length; i++) {
+  //   tableData = document.createElement('td')
+  //   tableData.innerHTML = data.tasting[fields[i]]
+  //   tableRow.appendChild(tableData)
+  // }
 
-// const clickOnSubmitIdForEdit = function (data) {
-//   const myTable = document.getElementById('singleTastingTableForEdit')
-//   if (myTable !== null) {
-//     $('#editTasting'(data))
-//   } else {
-//     generateOneTastingByIdAndEditTable(data)
-//     // $('#singleTastingTableForEdit').removeClass('hidden')
-//     $('#submitIdForEdit').addClass('hidden')
-//     $('#edit').removeClass('hidden')
-//     $('#submitEdit').removeClass('hidden')
-//   }
-// }
-// const getOneTastingByIdAndEditSuccess = function (data) {
-//   console.log('in getOneTastingByIdAndEditSuccess')
-//   const myTable = document.getElementById('singleTastingTableForEdit')
-//   if (myTable !== null) {
-//     $('#editTasting'(data))
-//   } else {
-//     generateOneTastingByIdAndEditTable(data)
-//     $('#singleTastingTable').removeClass('hidden')
-//     $('#submitIdForEdit').addClass('hidden')
-//     $('#edit').removeClass('hidden')
-//     $('#submitEdit').removeClass('hidden')
-//   }
-// }
+  document.getElementById('singleTastingTableForEdit').appendChild(table)
+  console.log('adding one tastings by id for edit table', table)
+}
 
-// const editTastingSuccess = function (data) {
-//   console.log('in editTastingSuccess')
-// }
+const clickOnSubmitIdForEdit = function (data) {
+  const myTable = document.getElementById('singleTastingTableForEdit')
+  if (myTable !== null) {
+    $('#editTasting'(data))
+  } else {
+    generateOneTastingByIdAndEditTable(data)
+    // $('#singleTastingTableForEdit').removeClass('hidden')
+    $('#submitIdForEdit').addClass('hidden')
+    $('#edit').removeClass('hidden')
+    $('#submitEdit').removeClass('hidden')
+  }
+}
+const getOneTastingByIdAndEditSuccess = function (data) {
+  console.log('in getOneTastingByIdAndEditSuccess')
+  const myTable = document.getElementById('singleTastingTableForEdit')
+  if (myTable !== null) {
+    $('#editTasting'(data))
+  } else {
+    generateOneTastingByIdAndEditTable(data)
+    $('#singleTastingTable').removeClass('hidden')
+    $('#submitIdForEdit').addClass('hidden')
+    $('#edit').removeClass('hidden')
+    $('#submitEdit').removeClass('hidden')
+  }
+}
+
+const editTastingSuccess = function (data) {
+  console.log('in editTastingSuccess')
+}
 
 let i
 const acc = document.getElementsByClassName('accordion')
@@ -408,6 +409,7 @@ const generateCoffeeTableDiv = function (data) {
 }
 
 const generateAllTastingsTable = function (data) {
+  console.log(data.tastings)
   const table = document.createElement('table')
   let tableRow = document.createElement('tr')
   let tableData = document.createElement('th')
@@ -439,20 +441,23 @@ const generateAllTastingsTable = function (data) {
   tableData = document.createElement('th')
   tableData.innerHTML = 'extraction_notes'
   tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
+  tableData.innerHTML = ''
+  tableRow.appendChild(tableData)
   table.appendChild(tableRow)
   for (let row = 0; row < data.tastings.length; row++) {
     tableRow = document.createElement('tr')
     tableData = document.createElement('td')
-    tableData.innerHTML = data.tastings[row]['roaster']
+    tableData.innerHTML = data.tastings[row].coffee['roaster']
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
-    tableData.innerHTML = data.tastings[row]['blend']
+    tableData.innerHTML = data.tastings[row].coffee['blend']
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
-    tableData.innerHTML = data.tastings[row]['rating']
+    tableData.innerHTML = data.tastings[row].coffee['rating']
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
-    tableData.innerHTML = data.tastings[row]['favorite']
+    tableData.innerHTML = data.tastings[row].coffee['favorite']
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
     tableData.innerHTML = data.tastings[row]['tasting_notes']
@@ -471,6 +476,9 @@ const generateAllTastingsTable = function (data) {
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
     tableData.innerHTML = data.tastings[row]['extraction_notes']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('button')
+    tableData.innerHTML = "<button type ='button' class ='editTastingButton'>EDIT</button>"
     tableRow.appendChild(tableData)
     table.appendChild(tableRow)
   }
@@ -500,9 +508,9 @@ module.exports = {
   generateAllTastingsTable,
   getAllTastingsSuccess,
   generateOneTastingByIdTable,
-  // generateOneTastingByIdAndEditTable,
-  getOneTastingByIdSuccess
+  generateOneTastingByIdAndEditTable,
+  getOneTastingByIdSuccess,
   // selectCoffeeForTasting
-  // clickOnSubmitIdForEdit
-  // editTastingSuccess
+  clickOnSubmitIdForEdit,
+  editTastingSuccess
 }
