@@ -149,7 +149,7 @@ const onGetOneTastingById = function (data) {
 const onEditTasting = function (data) {
   console.log('inside api.oneditTasting and the data is', data)
   return $.ajax({
-    url: config.apiUrl + 'tastings/' + data.id,
+    url: config.apiUrl + '/tastings/' + data.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

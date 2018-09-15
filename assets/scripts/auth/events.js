@@ -116,7 +116,6 @@ const getOneTastingById = function (event) {
 }
 
 const getOneTastingByIdAndEdit = function (event) {
-  //TODO $('#submitId').removeClass('hidden')
   console.log('in getOneTastingByIdAndEdit, editTastingButton clicked')
   event.preventDefault()
 
@@ -157,6 +156,7 @@ const addHandlers = () => {
   $('#getOneTastingById').on('submit', getOneTastingById)
   $('#editTastingButton').on('click', getOneTastingByIdAndEdit)
   $('#getOneTastingByIdAndEditForm').on('submit', editTasting)
+  $('#getOneTasting').on('click', $('#submitId').removeClass('hidden'))
 }
 
 module.exports = {
