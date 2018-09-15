@@ -221,6 +221,9 @@ const generateOneTastingByIdTable = function (data) {
   }
   tableRow = document.createElement('tr')
   tableData = document.createElement('td')
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('td')
+  tableData.innerHTML = "<id='submitTD'>"
   const btn = document.createElement('button')
   btn.innerHTML = "<button type ='button' id='submitEdit' class ='submit'>SAVE EDIT</button>"
   tableData.appendChild(btn)
