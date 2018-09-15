@@ -115,28 +115,29 @@ const getOneTastingById = function (event) {
     .catch(ui.getOneTastingByIdFailure)
 }
 
-const getOneTastingByIdandEdit = function (event) {
+const getOneTastingByIdAndEdit = function (event) {
+  //TODO $('#submitId').removeClass('hidden')
+  console.log('in getOneTastingByIdAndEdit, editTastingButton clicked')
   event.preventDefault()
-  // console.log('events got one tasting by id for edit')
 
   const data = getFormFields(this)
-  api.onGetOneTastingById(data)
-    .then(ui.getOneTastingByIdForEditSuccess)
-    .catch(ui.getOneTastingByIdForEditFailure)
+  api.onGetOneTastingById(event.data)
+    .then(ui.getOneTastingByIdAndEditSuccess)
+    .catch(ui.getOneTastingByIdAndEditFailure)
 }
 
-const editTasting = function (event) {
+const editTasting = function (data) {
   event.preventDefault()
-  console.log('edit tasting button clicked')
-  // $('editTastingButton').addClass('hidden')
-  $('#getOneTastingByIdandEdit').removeClass('hidden')
+  console.log('edittasting button clicked')
+  // $('#editTastingButton').addClass('hidden')
+  $('#getOneTastingByIdAndEdit').removeClass('hidden')
   $('#submitIdForEdit').removeClass('hidden')
 
-  const data = getFormFields(this)
-  // console.log('updated tasting')
-  api.onEditTasting(data)
+  const fields = getFormFields(this)
+  console.log(data)
+  api.onEditTasting(fields)
     .then(ui.getOneTastingByIdAndEditSuccess)
-    // .catch(ui.editTastingFailure)
+    .catch(ui.editTastingFailure)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~
@@ -154,9 +155,8 @@ const addHandlers = () => {
   $('#getAllCoffees').on('click', ui.selectCoffeeForTasting)
   $('#getAllTastings').on('click', getAllTastings)
   $('#getOneTastingById').on('submit', getOneTastingById)
-  $('#getOneTastingByIdandEdit').on('submit', editTasting)
-  $('#getOneTastingByIdandEdit').on('#editTastingButton', getOneTastingByIdandEdit)
-  $('.editTastingButton').on('click', editTasting)
+  $('#editTastingButton').on('click', getOneTastingByIdAndEdit)
+  $('#getOneTastingByIdAndEditForm').on('submit', editTasting)
 }
 
 module.exports = {

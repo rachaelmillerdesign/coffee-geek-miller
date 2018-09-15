@@ -46,6 +46,7 @@ const changePassword = function (data) {
 }
 
 const onTastingSubmit = function (data) {
+  console.log('inside api.onTastingSubmit and the data is', data)
   return $.ajax({
     url: config.apiUrl + '/tastings',
     method: 'POST',
@@ -133,20 +134,20 @@ const onGetOneTastingById = function (data) {
   })
 }
 
-const onGetOneTastingByIdforEdit = function (data) {
-//  console.log('inside api.gettastingbyidforedit and the data is', data)
-  return $.ajax({
-    url: config.apiUrl + '/tastings/' + data.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+// const ongetOneTastingByIdAndEdit = function (data) {
+//   console.log('inside api.gettastingbyidforedit and the data is', data)
+//   return $.ajax({
+//     url: config.apiUrl + '/tastings/' + data.id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 const onEditTasting = function (data) {
-//  console.log('inside api.editTasting and the data is', data)
+  console.log('inside api.oneditTasting and the data is', data)
   return $.ajax({
     url: config.apiUrl + 'tastings/' + data.id,
     method: 'PATCH',
@@ -171,6 +172,6 @@ module.exports = {
   onGetAllCoffees,
   onGetAllTastings,
   onGetOneTastingById,
-  onEditTasting,
-  onGetOneTastingByIdforEdit
+  onEditTasting
+  // ongetOneTastingByIdAndEdit
 }
