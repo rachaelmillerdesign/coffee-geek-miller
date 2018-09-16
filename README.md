@@ -38,11 +38,6 @@ Wireframes:
 User Stories:
 ![Imgur](https://i.imgur.com/GQLURGM.jpg)
 
-Inspiration for future features:
-
-![Imgur](https://i.imgur.com/T68dlcC.jpg)
-[Imgur](https://i.imgur.com/pIXchuK.jpg)
-
 <u>Possibilities for future refinement and development include:</u>
 
 - ratings score card / visualizer
@@ -52,3 +47,8 @@ Inspiration for future features:
 - user about me page
 - ability to upload images of coffee
 - types of equipment
+
+Inspiration for future features:
+
+![Imgur](https://i.imgur.com/T68dlcC.jpg)
+![Imgur](https://i.imgur.com/pIXchuK.jpg)
