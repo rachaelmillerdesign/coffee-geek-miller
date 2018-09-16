@@ -47,6 +47,9 @@ User Stories:
 - user about me page
 - ability to upload images of coffee
 - types of equipment
+- sorting capabilities
+- search coffees and tastings
+- view by rating and favorites
 
 Inspiration for future features:
 
