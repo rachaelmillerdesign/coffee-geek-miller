@@ -27,8 +27,8 @@
   outline: none;
   display: none;
   position: fixed;
-  top: 25%;
-  left: 50%;
+    top: 25%;
+    left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   height: auto;
@@ -85,40 +85,9 @@
 // BODY
 // ~~~~~~~~~~~~~~~~~~~~~
 body {
-  // background-color: #2B2211;
-  // background-image: url('https://i.imgur.com/pKjExxc.jpg');
-  background-image: url('https://i.imgur.com/VLDGvOg.jpg');
-  margin: 0 auto;
-}
-
-#maxWidth {
   background-color: #f0e4cd;
-  position: relative;
-  max-width: 450px;
+  // max-width: 400px;
   margin: 0 auto;
-  overflow: auto;
-}
-
-@media only screen and (max-width: 600px) and (min-width: 300px) {
-  #logo {
-    -webkit-transform: rotate(90deg) translateX(-400px) translateY(-15%); /* Safari */
-    transform: rotate(90deg) translateX(-400px) translateY(-15%);
-    transform-origin: bottom left;
-    margin: 0 auto;
-    float: none;
-    max-width: 12vw;
-  }
-  #spacer{
-    height: 20vw;
-  }
-}
-
-#logo {
-  float: left;
-  margin: 1%;
-  position: absolute;
-  // max-width: 15%;
-  max-height: 500px;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~
@@ -179,14 +148,10 @@ fieldset {
   display: block;
   -webkit-margin-start: 2px;
   -webkit-margin-end: 2px;
-  // -webkit-padding-before: 0.35em;
-  // -webkit-padding-start: 0.75em;
-  // -webkit-padding-end: 0.75em;
-  // -webkit-padding-after: 0.625em;
-  -webkit-padding-before: 0em;
-  -webkit-padding-start: 0em;
-  -webkit-padding-end: 0em;
-  -webkit-padding-after: 0em;
+  -webkit-padding-before: 0.35em;
+  -webkit-padding-start: 0.75em;
+  -webkit-padding-end: 0.75em;
+  -webkit-padding-after: 0.625em;
   min-width: -webkit-min-content;
   border-width: 0;
   // border-style: groove;
@@ -363,3 +328,6 @@ float: right;
    left: 0;
    color: gold;
 }
+// @media only screen and (max-width: 600px) and (min-width: 400px) {
+//
+// }
