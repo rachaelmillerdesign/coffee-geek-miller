@@ -86,12 +86,14 @@
 // ~~~~~~~~~~~~~~~~~~~~~
 body {
   // background-color: #2B2211;
-  background-image: url('https://i.imgur.com/ZZJ2sFb.jpg');
+  // background-image: url('https://i.imgur.com/pKjExxc.jpg');
+  background-image: url('https://i.imgur.com/VLDGvOg.jpg');
   margin: 0 auto;
 }
 
 #maxWidth {
   background-color: #f0e4cd;
+  position: relative;
   max-width: 450px;
   margin: 0 auto;
   overflow: auto;
@@ -99,18 +101,22 @@ body {
 
 @media only screen and (max-width: 600px) and (min-width: 300px) {
   #logo {
-    -webkit-transform: rotate(90deg); /* Safari */
-    transform: rotate(90deg) translateX(-500px);
+    -webkit-transform: rotate(90deg) translateX(-400px) translateY(-15%); /* Safari */
+    transform: rotate(90deg) translateX(-400px) translateY(-15%);
     transform-origin: bottom left;
     margin: 0 auto;
     float: none;
- }
+    max-width: 12vw;
+  }
+  #spacer{
+    height: 20vw;
+  }
 }
 
 #logo {
   float: left;
   margin: 1%;
-  position: fixed;
+  position: absolute;
   // max-width: 15%;
   max-height: 500px;
 }
