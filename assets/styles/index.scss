@@ -102,14 +102,14 @@ body {
 @media only screen and (max-width: 600px) and (min-width: 300px) {
   #logo {
     -webkit-transform: rotate(90deg) translateX(-400px) translateY(-15%); /* Safari */
-    transform: rotate(90deg) translateX(-400px) translateY(-15%);
+    transform: rotate(90deg) translateX(-610%) translateY(-15%);
     transform-origin: bottom left;
     margin: 0 auto;
     float: none;
     max-width: 12vw;
   }
   #spacer{
-    height: 20vw;
+    height: 18vw;
   }
 }
 
