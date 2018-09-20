@@ -222,7 +222,7 @@ const generateOneTastingByIdTable = function (data) {
   tableRow = document.createElement('tr')
   tableData = document.createElement('td')
   let btn = document.createElement('button')
-  btn.innerHTML = "<button type ='button' id='cancelEdit' class ='reset'>CANCEL</button>"
+  btn.innerHTML = "<button type ='button' id='cancelEdit'>CANCEL</button>"
   tableData.appendChild(btn)
   tableRow.appendChild(tableData)
   tableData = document.createElement('td')

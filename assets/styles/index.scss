@@ -120,9 +120,9 @@ td,tr {
   border: 1px solid #F0E4CC;
   background-color: white;
   color: #2B2211;
-  font-size: .3rem;
+  font-size: .7rem;
   font-weight: 500;
-  padding: 1.2vw;
+  padding: 1.1vw;
 }
 
 th {
@@ -183,9 +183,9 @@ input {
 }
 
 input[type='submit'] {
-  background-color:#B28C5F;
+  background-color: #B28C5F;
   border: none;
-  padding: 1 vw;
+  padding: 1vw;
   background-color: none;
   outline: none;
 }
@@ -264,8 +264,17 @@ button {
   background-color: white;
 }
 
-#submitTD {
-  padding: 0vw;
+#submitEdit {
+  padding: 1vw;
+  background-color: #9ece00;
+  font-size: 1rem;
+
+}
+
+#cancelEdit {
+  padding: 1vw;
+  background-color: #f98900;
+  font-size: 1rem;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~
