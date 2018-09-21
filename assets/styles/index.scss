@@ -296,8 +296,17 @@ form {
   background-color: white;
 }
 
-#submitTD {
-  padding: 0vw;
+#submitEdit {
+  padding: 1vw;
+  background-color: #9ece00;
+  font-size: 1rem;
+
+}
+
+#cancelEdit {
+  padding: 1vw;
+  background-color: #f98900;
+  font-size: 1rem;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~
