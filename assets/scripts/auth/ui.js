@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const events = require('./events')
+// const events = require('./events')
 
 const signUpSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
