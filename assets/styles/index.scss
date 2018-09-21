@@ -88,6 +88,29 @@ body {
   background-color: #f0e4cd;
   // max-width: 400px;
   margin: 0 auto;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  #logo {
+    -webkit-transform: rotate(90deg) translateX(-400px) translateY(-15%); /* Safari */
+    transform: rotate(90deg) translateX(-610%) translateY(-15%);
+    transform-origin: bottom left;
+    margin: 0 auto;
+    float: none;
+    max-width: 12vw;
+  }
+  #spacer{
+    height: 18vw;
+  }
+}
+
+#logo {
+  float: left;
+  margin: 1%;
+  position: absolute;
+  // max-width: 15%;
+  max-height: 500px;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~
@@ -120,14 +143,14 @@ td,tr {
   border: 1px solid #F0E4CC;
   background-color: white;
   color: #2B2211;
-  font-size: .3rem;
-  font-weight: 500;
-  padding: 1.2vw;
+  font-size: .65rem;
+  font-weight: 600;
+  padding: 1vw;
 }
 
 th {
   color: #2B2211;
-  font-size: .4rem;
+  font-size: .8rem;
   font-weight: 600;
   margin: 0 auto;
   padding: 1.5vw 0 1.5vw 0;
@@ -179,13 +202,13 @@ input {
   display: inline-block;
   float: right;
   clear: right;
-  padding: .5vw;
+  padding: 2.5px;
 }
 
 input[type='submit'] {
-  background-color:#B28C5F;
+  background-color:#9ece00;
   border: none;
-  padding: 1 vw;
+  padding: 2.5px;
   background-color: none;
   outline: none;
 }
@@ -197,6 +220,15 @@ input[type='submit'].focus {
 button {
   border: 0px;
   padding: 0px
+}
+
+form {
+  padding: 1vw;
+}
+
+#oneTasting,
+#getOneTastingByIdAndEditForm {
+   padding: 0;
 }
 
 #notes {
