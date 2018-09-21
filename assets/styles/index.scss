@@ -214,13 +214,13 @@ input {
   display: inline-block;
   float: right;
   clear: right;
-  padding: .5vw;
+  padding: 2.5px;
 }
 
 input[type='submit'] {
-  background-color:#B28C5F;
+  background-color:#9ece00;
   border: none;
-  padding: 1 vw;
+  padding: 2.5px;
   background-color: none;
   outline: none;
 }
@@ -232,6 +232,15 @@ input[type='submit'].focus {
 button {
   border: 0px;
   padding: 0px
+}
+
+form {
+  padding: 1vw;
+}
+
+#oneTasting,
+#getOneTastingByIdAndEditForm {
+   padding: 0;
 }
 
 #notes {
