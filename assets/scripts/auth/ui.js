@@ -221,10 +221,13 @@ const generateOneTastingByIdTable = function (data) {
   }
   tableRow = document.createElement('tr')
   tableData = document.createElement('td')
+  let btn = document.createElement('button')
+  btn.innerHTML = "<button type ='button' id='cancelEdit'>CANCEL</button>"
+  tableData.appendChild(btn)
   tableRow.appendChild(tableData)
   tableData = document.createElement('td')
-  tableData.innerHTML = "<id='submitTD'>"
-  const btn = document.createElement('button')
+  // tableData.innerHTML = "<id='submitTD'>"
+  btn = document.createElement('button')
   btn.innerHTML = "<button type ='button' id='submitEdit' class ='submit'>SAVE EDIT</button>"
   tableData.appendChild(btn)
   tableRow.appendChild(tableData)
@@ -422,6 +425,9 @@ const generateAllTastingsTable = function (data) {
   const table = document.createElement('table')
   let tableRow = document.createElement('tr')
   let tableData = document.createElement('th')
+  tableData.innerHTML = 'ID'
+  tableRow.appendChild(tableData)
+  tableData = document.createElement('th')
   tableData.innerHTML = 'roaster'
   tableRow.appendChild(tableData)
   tableData = document.createElement('th')
@@ -457,6 +463,9 @@ const generateAllTastingsTable = function (data) {
   for (let row = 0; row < data.tastings.length; row++) {
     tableRow = document.createElement('tr')
     tableData = document.createElement('td')
+    tableData.innerHTML = data.tastings[row]['id']
+    tableRow.appendChild(tableData)
+    tableData = document.createElement('td')
     tableData.innerHTML = data.tastings[row].coffee['roaster']
     tableRow.appendChild(tableData)
     tableData = document.createElement('td')
@@ -486,9 +495,9 @@ const generateAllTastingsTable = function (data) {
     tableData = document.createElement('td')
     tableData.innerHTML = data.tastings[row]['extraction_notes']
     tableRow.appendChild(tableData)
-    tableData = document.createElement('button')
-    tableData.innerHTML = "<button type ='button' id='editTastingButton'>EDIT</button>"
-    tableRow.appendChild(tableData)
+    // tableData = document.createElement('button')
+    // tableData.innerHTML = "<button type ='button' id='editTastingButton'>EDIT</button>"
+    // tableRow.appendChild(tableData)
     table.appendChild(tableRow)
   }
   document.getElementById('allTastingsTable').appendChild(table)

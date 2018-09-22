@@ -155,8 +155,9 @@ const addHandlers = () => {
   $('#getAllTastings').on('click', getAllTastings)
   $('#getOneTastingById').on('submit', getOneTastingById)
   $('#editTastingButton').on('click', getOneTastingByIdAndEdit)
-  $('#getOneTastingByIdAndEditForm').on('submit', editTasting)
+  // $('#getOneTastingByIdAndEditForm').on('submit', editTasting)
   $('#getOneTasting').on('click', $('#submitId').removeClass('hidden'))
+  $('#cancelEdit').on('click', $('#getOneTasting').toggle)
 }
 
 module.exports = {
