@@ -226,6 +226,8 @@ const generateOneTastingByIdTable = function (data) {
   tableData.appendChild(btn)
   tableRow.appendChild(tableData)
   tableData = document.createElement('td')
+  // tableRow.appendChild(tableData)
+  // table.appendChild(tableRow)
   // tableData.innerHTML = "<id='submitTD'>"
   btn = document.createElement('button')
   btn.innerHTML = "<button type ='button' id='submitEdit' class ='submit'>SAVE EDIT</button>"
@@ -315,6 +317,7 @@ const clickOnSubmitIdForEdit = function (data) {
     $('#submitEdit').removeClass('hidden')
   }
 }
+
 const getOneTastingByIdAndEditSuccess = function (data) {
   console.log('in getOneTastingByIdAndEditSuccess')
   const myTable = document.getElementById('singleTastingTableForEdit')
