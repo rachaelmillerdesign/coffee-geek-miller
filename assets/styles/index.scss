@@ -27,8 +27,8 @@
   outline: none;
   display: none;
   position: fixed;
-    top: 25%;
-    left: 50%;
+  top: 25%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   height: auto;
@@ -85,8 +85,16 @@
 // BODY
 // ~~~~~~~~~~~~~~~~~~~~~
 body {
+  // background-color: #2B2211;
+  // background-image: url('https://i.imgur.com/pKjExxc.jpg');
+  background-image: url('https://i.imgur.com/VLDGvOg.jpg');
+  margin: 0 auto;
+}
+
+#maxWidth {
   background-color: #f0e4cd;
-  // max-width: 400px;
+  position: relative;
+  max-width: 450px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -171,10 +179,14 @@ fieldset {
   display: block;
   -webkit-margin-start: 2px;
   -webkit-margin-end: 2px;
-  -webkit-padding-before: 0.35em;
-  -webkit-padding-start: 0.75em;
-  -webkit-padding-end: 0.75em;
-  -webkit-padding-after: 0.625em;
+  // -webkit-padding-before: 0.35em;
+  // -webkit-padding-start: 0.75em;
+  // -webkit-padding-end: 0.75em;
+  // -webkit-padding-after: 0.625em;
+  -webkit-padding-before: 0em;
+  -webkit-padding-start: 0em;
+  -webkit-padding-end: 0em;
+  -webkit-padding-after: 0em;
   min-width: -webkit-min-content;
   border-width: 0;
   // border-style: groove;
@@ -296,17 +308,8 @@ form {
   background-color: white;
 }
 
-#submitEdit {
-  padding: 1vw;
-  background-color: #9ece00;
-  font-size: 1rem;
-
-}
-
-#cancelEdit {
-  padding: 1vw;
-  background-color: #f98900;
-  font-size: 1rem;
+#submitTD {
+  padding: 0vw;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~
@@ -369,6 +372,3 @@ float: right;
    left: 0;
    color: gold;
 }
-// @media only screen and (max-width: 600px) and (min-width: 400px) {
-//
-// }
